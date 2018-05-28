@@ -1,0 +1,20 @@
+.container {
+  width: 700rpx;
+  min-height: 1000rpx;
+  margin: 0 auto;
+}
+.title {
+  font-size: 16px;
+
+}
+.function-box {
+  width: 700rpx;
+  height: 200rpx;
+  margin: 10rpx auto 0;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 200rpx;
+  font-size: 60rpx;
+  font-weight: 700;
+  background-color: pink;  
+}

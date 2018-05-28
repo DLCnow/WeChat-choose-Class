@@ -1,0 +1,21 @@
+<view class="container">
+  <swiper class="slide-image" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="unique">
+      <swiper-item>
+        <image class="slide-item" src="{{item}}" mode="widthFix" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <block>
+    <view class="function-box" bindtap="checkWorkBtnClick">老师发布考勤</view>
+    <view class="function-box" bindtap="checkWorkBtnClickStudent">学生签到</view>    
+  </block>
+  <block>
+    <view class="function-box" bindtap="chooseClassBtnClick">老师发布选课</view>
+    <view class="function-box" bindtap="chooseClassBtnClickStudent">学生选课</view>    
+  </block>
+  <block>
+    <view class="function-box" bindtap="defenceBtnClick">老师答辩评价</view>
+    <view class="function-box" bindtap="defenceResultBtnClick">学生评价结果</view>
+  </block>
+</view>

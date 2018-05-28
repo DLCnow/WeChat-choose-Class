@@ -1,0 +1,12 @@
+<view class="container">
+<view class="title">欢迎使用辽工大选课小程序，丁量川同学（老师）</view>
+  <block>
+    <view class="function-box" bindtap="checkWorkBtnClick">个人信息</view>
+  </block>
+  <block>
+    <view class="function-box" bindtap="chooseClassBtnClick">修改密码</view>
+  </block>
+  <block>
+    <view class="function-box" bindtap="defenceBtnClick">退出登录</view>
+  </block>
+</view>

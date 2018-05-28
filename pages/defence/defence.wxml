@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="detail">
+  <view><view class="from-inline-block">答辩班级名称:</view><view class="from-inline-block">通信一班</view></view>
+  <button bindtap="lookStudentList">查看学生列表</button>
+  </view>
+  <view class="detail">
+  <view><view class="from-inline-block">答辩班级名称:</view><view class="from-inline-block">通信二班</view></view>
+  <button bindtap="lookStudentList">查看学生列表</button>
+  </view>
+  <view class="detail">
+  <view><view class="from-inline-block">答辩班级名称:</view><view class="from-inline-block">通信三班</view></view>
+  <button bindtap="lookStudentList">查看学生列表</button>
+  </view>
+  <view class="detail">
+  <view><view class="from-inline-block">答辩班级名称:</view><view class="from-inline-block">通信四班</view></view>
+  <button bindtap="lookStudentList">查看学生列表</button>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<view class="container">
+  <view>
+    <button type='primary' bindtap="createClassGroup">发布新课程组</button>
+  </view>
+  <view>已经发布的课程组：</view>
+  <view class="detail">
+  <view><view class="from-inline-block">课程组名称:</view><view class="from-inline-block">电信学院6-5日选课列表</view></view>
+  <view><view class="from-inline-block">上课年级:</view><view class="from-inline-block">大二</view></view>  
+  <view><view class="from-inline-block">发布老师:</view><view class="from-inline-block">德兴</view></view>  
+  <button type='warn' bindtap="checkWorkDetailBtnClick">删除发布的课程组</button>
+  </view>
+</view>

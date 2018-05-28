@@ -1,0 +1,9 @@
+<view class="container">
+  <view wx:for="{{classList}}">
+    <view class="detail">
+      <view>上课老师：{{item.teacher}}</view>
+      <view>课程组名称：{{item.className}}</view>
+      <button bindtap="chooseClassGroup">查看这个课程组</button>
+    </view>
+  </view>
+</view>

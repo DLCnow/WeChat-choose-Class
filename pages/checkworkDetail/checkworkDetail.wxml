@@ -1,0 +1,6 @@
+<view class="container">
+  <view>学生签到情况：</view>
+  <view><view class="from-inline-block">学生A</view><view class="from-inline-block"><icon type="success" size="20"/>已签到</view></view>
+  <view><view class="from-inline-block">学生B</view><view class="from-inline-block"><icon type="cancel" size="20"/>未签到</view></view>
+  <view><view class="from-inline-block">学生C</view><view class="from-inline-block"><icon type="success" size="20"/>已签到</view></view>
+</view>

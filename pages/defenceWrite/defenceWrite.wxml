@@ -1,0 +1,9 @@
+<view class="container">
+  <view>
+    <view>撰写答辩评价</view>
+    <view>学生姓名：丁量川1</view>
+    <view>答辩分数:<input type="text" placeholder="请输入..."></input></view>
+    <view>评价：<textarea placeholder="此处键入答辩描述..."/></view>
+    <button type='primary' bindtap="createClass">创建新课程</button>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<view class="container">
+  <view>
+    <view>（老师）发布考勤</view>
+    <view>课程名称：<input type="text" placeholder="请输入..."></input></view>
+    <view>上课地点：<input type="text" placeholder="请输入..."></input></view>
+    <view>上课老师：<input type="text" placeholder="请输入..."></input></view>
+    <button>发布</button>
+  </view>
+  <view>已经发布的签到：</view>
+  <view class="detail">
+  <view><view class="from-inline-block">课程名称:</view><view class="from-inline-block">通信原理</view></view>
+  <view><view class="from-inline-block">上课地点:</view><view class="from-inline-block">耘慧楼-218</view></view>
+  <view><view class="from-inline-block">上课老师:</view><view class="from-inline-block">德兴</view></view>
+  <button bindtap="checkWorkDetailBtnClick">查看详情</button>
+  </view>
+  <view class="detail">
+  <view><view class="from-inline-block">课程名称:</view><view class="from-inline-block">通信原理</view></view>
+  <view><view class="from-inline-block">上课地点:</view><view class="from-inline-block">耘慧楼-218</view></view>
+  <view><view class="from-inline-block">上课老师:</view><view class="from-inline-block">德兴</view></view>
+  <button bindtap="checkWorkDetailBtnClick">查看详情</button>  
+  </view>
+  <view class="detail">
+  <view><view class="from-inline-block">课程名称:</view><view class="from-inline-block">通信原理</view></view>
+  <view><view class="from-inline-block">上课地点:</view><view class="from-inline-block">耘慧楼-218</view></view>
+  <view><view class="from-inline-block">上课老师:</view><view class="from-inline-block">德兴</view></view>
+  <button bindtap="checkWorkDetailBtnClick">查看详情</button>  
+  </view>
+</view>
