@@ -1,4 +1,0 @@
-/* pages/checkwork/checkwork.wxss */
-.from-inline-block {
-  display: inline-block;
-}

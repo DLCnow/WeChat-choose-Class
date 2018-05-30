@@ -1,5 +1,0 @@
-.container {
-  width: 700rpx;
-  min-height: 1000rpx;
-  margin: 0 auto;
-}

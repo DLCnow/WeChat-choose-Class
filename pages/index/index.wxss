@@ -1,21 +1,43 @@
+page{
+  background-color: #f5f5f5;
+}
+
 .container {
   width: 100%;
 }
 .slide-image {
-  width: 700rpx;
+  width:100%;
   margin: 0 auto;
 }
 .slide-item {
   width: 100%;
 }
 .function-box {
-  width: 700rpx;
-  height: 200rpx;
-  margin: 10rpx auto 0;
-  border-radius: 30rpx;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem 1rem;
+  border-radius: 20rpx;
   text-align: center;
-  line-height: 200rpx;
-  font-size: 60rpx;
+  font-size: 35rpx;
   font-weight: 700;
-  background-color: pink;  
+  padding: 1rem 1rem;
+  background-color: #fff;
+}
+.head-logo{
+ margin: 1rem auto;
+  display: block;
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.logo{
+ height: 100%;
+ width: 100%;
+}
+.show-text{
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-size: 16px;
+  color: #848484;
+  text-align: center;
 }

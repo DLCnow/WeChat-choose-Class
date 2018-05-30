@@ -1,21 +1,20 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/subscription/subscription",
+    "pages/updatePass/updatePass",
+    "pages/teaEvalution/teaEvalution",
+    "pages/teaCourseList/teaCourseList",
+    "pages/teaSignin/teaSignin",
+    "pages/stuSignin/stuSignin",
+    "pages/teaCourse/teaCourse",
     "pages/personal/personal",
     "pages/login/login",
     "pages/chooseClass/chooseClass",
-    "pages/chooseClassStudent/chooseClassStudent",
-    "pages/checkwork/checkwork",
-    "pages/checkworkDetail/checkworkDetail",
-    "pages/checkworkStudent/checkworkStudent",
-    "pages/checkworkStudentDetail/checkworkStudentDetail",
-    "pages/createClass/createClass",
-    "pages/createClassDetail/createClassDetail",
-    "pages/defence/defence",
-    "pages/defenceDetail/defenceDetail",
-    "pages/defenceWrite/defenceWrite",
-    "pages/defenceResult/defenceResult"
+    "pages/stuCourse/stuCourse",
+    "pages/stuEvalution/stuEvalution",
+    "pages/teaUpdateC/teaUpdateC",
+    "pages/updateEvalution/updateEvalution",
+    "pages/register/register"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,18 +25,12 @@
   "tabBar": {
     "color": "#9dacb7",
     "selectedColor": "#34B457",
-    "backgroundColor": "#F7F7F9",
-    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "borderStyle": "rgba(0, 0, 0, 0.1)",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/大炮.png",
-        "selectedIconPath": "images/大炮.png"
-      },
-      {
-        "pagePath": "pages/subscription/subscription",
-        "text": "订阅号",
         "iconPath": "images/大炮.png",
         "selectedIconPath": "images/大炮.png"
       },

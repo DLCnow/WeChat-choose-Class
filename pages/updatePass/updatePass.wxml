@@ -1,0 +1,49 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">密码修改</view>
+         <view class="page__desc">{{warnStr}}</view> 
+    </view>
+
+<view class="mcontainer">
+
+    <view class="item">
+       <view class="login-item">
+       	    <view class="login-item-info">用户名</view>
+            <view><input disabled="{{true}}" bindinput="usernameInput" value="{{username}}" /></view>
+       </view>
+       <view class="login-item">
+            <view class="login-item-info">旧密码</view>
+            <view class="login-pwd">
+            
+            <input style="flex-grow:1"   value="{{password}}" bindinput="passwordInput"/> 
+            <!-- <text> 忘记密码 </text> -->
+            
+            </view>
+       </view>
+      <view class="login-item">
+            <view class="login-item-info">新密码</view>
+            <view class="login-pwd">
+          <input style="flex-grow:1" value="{{repassword}}"  bindinput="repasswordInput"/> 
+        
+            </view>
+       </view>
+
+
+
+
+
+
+
+
+       <view class="login-item bottom">
+            <button  disabled='{{!isSubmitAble}}' class="login-btn" bindtap="loginBtnClick">重置</button>
+       </view>
+
+
+  
+    </view>
+
+</view>
+
+
+</view>

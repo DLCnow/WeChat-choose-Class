@@ -14,45 +14,98 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    avatarUrl: '',
+    nickName: '',
+    userType: '',
+    userid: 0
   },
+
   onLoad: function (options) {
-    if (app.globalData.userInfo == null) {
-      wx.redirectTo({
-        url: '../login/login',
+    let that = this 
+      wx.getSetting({
+        success: function (res) {
+          if (res.authSetting['scope.userInfo']  ) {
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+            wx.getUserInfo({
+              success: function (res) {
+                app.globalData.userInfo = res.userInfo
+                that.data.avatarUrl = app.globalData.userInfo.avatarUrl
+                that.data.nickName = app.globalData.userInfo.nickName
+              }
+            })
+          } else if (wx.getStorageSync('username')){
+           
+            that.setData({
+              avatarUrl: wx.getStorageSync('avatarUrl'),
+              nickName: wx.getStorageSync('username'),
+              userType: wx.getStorageSync('userType'),
+              userid: wx.getStorageSync('userid')
+            })
+
+          }else{
+            wx.redirectTo({
+              url: '../login/login',
+            })
+          }
+        }
       })
-    } else {
-      this.setData({ username: app.globalData.userInfo.username, password: app.globalData.userInfo.password })
-    }
   },
-  checkWorkBtnClick: function () {
+  // 学生模块
+  // 考勤签到
+  moveTSignin: function () {
+    let that = this
     wx.navigateTo({
-      url: '../checkwork/checkwork',
-    })
-  },
-  checkWorkBtnClickStudent: function () {
-    wx.navigateTo({
-      url: '../checkworkStudent/checkworkStudent',
+      url: '../stuSignin/stuSignin?id=' + that.data.userid,
     })
   },
-  chooseClassBtnClick: function () {
+  // 选择课程
+  moveTCourse: function () {
+    let that = this
     wx.navigateTo({
-      url: '../createClass/createClass',
-    })
-  }, 
-  chooseClassBtnClickStudent: function() {
-    wx.navigateTo({
-      url: '../chooseClass/chooseClass',
-    })
-  }, 
-  defenceBtnClick: function() {
-    wx.navigateTo({
-      url: '../defence/defence',
-    })
-  }, 
-  defenceResultBtnClick: function() {
-    wx.navigateTo({
-      url: '../defenceResult/defenceResult',
+      url: '../stuCourse/stuCourse?id=' + that.data.userid,
     })
   },
+  // 查看答辩评价
+  moveTEvalution: function(){
+    let that = this
+    wx.navigateTo({
+      url: '../stuEvalution/stuEvalution?id=' + that.data.userid,
+    })
+  },
+  // 学生模块
+  // ---------------
+  // 教师模块
+  // 发布课程
+  moveCourse: function(){
+    wx.navigateTo({
+      url: '../teaCourse/teaCourse',
+    })
+  },
+  // 查看学生签到
+  moveSignin: function(){
+    wx.navigateTo({
+      url: '../teaSignin/teaSignin',
+    })
+  },
+  // 对学生答辩评价
+  movEvaluation: function(){
+    wx.navigateTo({
+      url: '../teaEvalution/teaEvalution',
+    })
+  },
+  // 修改课程内容
+  moveUpdateC: function(){
+    wx.navigateTo({
+      url: '../teaUpdateC/teaUpdateC',
+    })
+  },
+  // 查看课程列表
+  moveShowcourse: function(){
+    wx.navigateTo({
+      url: '../teaCourseList/teaCourseList',
+    })
+  }
+  // 教师模块
+
 })

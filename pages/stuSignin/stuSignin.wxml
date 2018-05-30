@@ -1,0 +1,16 @@
+<!--pages/teaSignin/teaSignin.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">考勤签到</view>
+         <view class="page__desc">每天给自己一个希望,只为明天更美好</view> 
+    </view>
+
+
+
+    <view class="signin" bindtap="siginUp" style="background-color:{{isSubmitAble?'rgba(83,183,123,1)':'rgba(83,183,123,.5)'}}">
+      <view  disabled='{{!isSubmitAble}}'  >{{showText}}</view>
+
+      <view>{{time}}</view>
+    </view>
+
+</view>

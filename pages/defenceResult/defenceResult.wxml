@@ -1,8 +1,0 @@
-<view class="container">
-  <view>
-    <view>我的答辩结果</view>
-    <view>学生姓名：丁量川1</view>
-    <view>答辩分数:90分</view>
-    <view>评价：你的答辩已通过，继续努力</view>
-  </view>
-</view>

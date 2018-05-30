@@ -1,8 +1,0 @@
-/* pages/checkwork/checkwork.wxss */
-.detail {
-  border: 1px solid black;
-  margin-bottom: 10rpx;
-}
-.from-inline-block {
-  display: inline-block;
-}
