@@ -136,9 +136,7 @@ Page({
     });
   },
   goRegister: function(){
-    wx.navigateTo({
-      url: '../register/register'
-    })
+ 
   },
   isEmpty: function (str) {
     if (str == null || str == "") {

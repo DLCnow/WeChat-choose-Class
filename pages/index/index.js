@@ -22,6 +22,9 @@ Page({
   },
 
   onLoad: function (options) {
+
+
+
     let that = this 
       wx.getSetting({
         success: function (res) {

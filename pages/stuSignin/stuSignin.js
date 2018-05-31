@@ -10,14 +10,18 @@ Page({
     showText: '签到',
     time: '',
     isSubmitAble: false,
-    id: ''
+    id: 1,
+    course: [],
+    userData: [],
+    siginId: '',
+    courseIdList: '',
+    reCourse: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
     // 再通过setData更改Page()里面的data，动态更新页面的数据  
     let that = this
     var time = formatTime(new Date());
@@ -33,37 +37,117 @@ Page({
 
 
 
+  // table 
 
 
-
-
-    // 判断是否签到
-    let times = formatDate(new Date) // 获取今天的时间
     wx.request({
-        url: app.globalData.rootDocment + '/users/getIdSignin',
-      data: {
-        id: options.id,
-        time: times
-      },
+      url: app.globalData.rootDocment + '/users/getAllCourse',
+      data: {},
       method: 'get',
       header: { 'Content-Type': 'application/x-www-form-urlencoded' },
       success: function (res) {
-        console.log(res.data.length)
-        if (res.data.length>0){
-          that.setData({
-            showText: '已签到',
-            isSubmitAble: false,
+        that.setData({
+          course: res.data
+        })
+
+        let courseList = res.data
+        wx.request({
+          url: app.globalData.rootDocment + '/users/getIdStu',
+          data: {
             id: options.id
-          })
-        }else{
-          that.setData({
-            showText: '未签到',
-            isSubmitAble: true,
-            id: options.id
-          })
-        }  
+          },
+          method: 'get',
+          header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          success: function (res) {
+            that.setData({
+              userData: res.data[0]
+            })
+            
+            let arr = that.data.userData.course.split(',')
+            let resList = courseList
+           
+            for (var j = 0; j < resList.length; j++) {
+              resList[j].flag = ''
+            }
+          
+
+            for (var j = 0; j < resList.length; j++) {
+              for (var i = 0; i < arr.length; i++) {
+                if (parseInt(arr[i]) == parseInt(resList[j].id)) {
+                  resList[j].flag = '已选'
+                } 
+              }
+            }
+
+
+
+
+            let arrL = []
+            for (var i = 0; i < resList.length; i++) {
+              if (resList[i].flag === '已选'){
+                arrL.push(resList[i])
+              }
+            }
+
+
+
+
+
+            that.setData({
+              course: arrL
+            })
+
+
+            // 查查有没有这个签到
+            let times = formatDate(new Date) // 获取今天的时间
+            wx.request({
+              url: app.globalData.rootDocment + '/users/getIdSignin',
+              data: {
+                id: options.id,
+                time: times
+              },
+              method: 'get',
+              header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              success: function (res) {
+
+               
+                let arr = res.data[0].course.split(',')
+                let resList = that.data.course
+                for (var j = 0; j < resList.length; j++) {
+                  resList[j].sigin = ''
+                }
+
+
+                for (var j = 0; j < resList.length; j++) {
+                  for (var i = 0; i < arr.length; i++) {
+                    if (parseInt(arr[i]) == parseInt(resList[j].id)) {
+                      resList[j].sigin = '已签到'
+                    }
+                  }
+                }
+
+
+
+                that.setData({
+                  course: resList,
+                  siginId: res.data[0].id,
+                  courseIdList: res.data[0].course
+                })
+
+
+
+
+
+              }
+            })
+          }
+        })
       }
     })
+  // table 
+
+
+
 
   },
 
@@ -123,6 +207,109 @@ Page({
         wx.hideLoading()
       },1000)
     }
+  },
+
+  updateTap: function(e){
+    // 改变签到状态
+
+    let that = this
+    let id = e.currentTarget.dataset.id
+    let sigin = e.currentTarget.dataset.sigin
+    let siginId = that.data.siginId  // 当前用户的签到课程id
+    let courseIdList = that.data.courseIdList// 当前用户的签到情况
+   
+
+
+
+    if (e.currentTarget.dataset.sigin=='已签到'){
+
+
+      wx.showLoading({
+        title: '无法重复签到!',
+      })
+
+
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 1000)
+
+
+
+    }else{
+
+      courseIdList = courseIdList + that.data.reCourse + (courseIdList.length == 0 ? id : (',' + id))
+
+      console.log(courseIdList)
+
+
+      wx.request({
+        url: app.globalData.rootDocment + '/users/updateSignin',
+        data: {
+          id: siginId,
+          course: courseIdList
+        },
+        method: 'get',
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        success: function (res) {
+          let times = formatDate(new Date) // 获取今天的时间
+
+
+
+
+          wx.request({
+            url: app.globalData.rootDocment + '/users/getIdSignin',
+            data: {
+              id: wx.getStorageSync('userid'),
+              time: times
+            },
+            method: 'get',
+            header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            success: function (res) {
+              let arr = res.data[0].course.split(',')
+              let resList = that.data.course
+              for (var j = 0; j < resList.length; j++) {
+                resList[j].sigin = ''
+              }
+
+
+              for (var j = 0; j < resList.length; j++) {
+                for (var i = 0; i < arr.length; i++) {
+                  if (parseInt(arr[i]) == parseInt(resList[j].id)) {
+                    resList[j].sigin = '已签到'
+                  }
+                }
+              }
+
+
+              that.setData({
+                course: resList,
+                reCourse: res.data[0].course
+              })
+
+
+            }
+          })
+
+        }
+      })
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
   },
   onReady: function () {
   

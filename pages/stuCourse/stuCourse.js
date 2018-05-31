@@ -202,17 +202,6 @@ Page({
         })
 
 
-
-
-
-
-
-
-
-
-
-
-
         wx.request({
           url: app.globalData.rootDocment + '/users/getIdStu',
           data: {

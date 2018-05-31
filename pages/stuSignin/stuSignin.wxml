@@ -6,11 +6,38 @@
     </view>
 
 
+      <view class="function-box" wx:for="{{course}}"  wx:key="*this" bindtap="updateTap" data-id="{{item.id}}"  data-sigin="{{item.sigin}}" wx:if="{{item.flag=='已选'}}">
+        <view class="fun-left">
+        <view>
+          任课老师: {{item.tea_name}}
+      </view>
+          <view class="actor">
+          <image src="../../images/logo.png"></image>
+              {{item.name}}
+          </view>
+        </view>
 
-    <view class="signin" bindtap="siginUp" style="background-color:{{isSubmitAble?'rgba(83,183,123,1)':'rgba(83,183,123,.5)'}}">
+
+        <view class="fun-right">
+            <view style="color: #fcb425;"> {{item.local}}</view>
+        
+          <view style='color: #53b77b;'>{{item.date}} - {{item.time}}</view>
+<view>{{item.number}} 周</view>
+        </view>
+
+
+
+        <view class="flag" wx:if="{{item.sigin=='已签到'}}">
+          {{item.sigin}}
+
+        </view> 
+     
+     </view>
+
+    <!-- <view class="signin" bindtap="siginUp" style="background-color:{{isSubmitAble?'rgba(83,183,123,1)':'rgba(83,183,123,.5)'}}">
       <view  disabled='{{!isSubmitAble}}'  >{{showText}}</view>
 
       <view>{{time}}</view>
-    </view>
+    </view> -->
 
 </view>
