@@ -1,0 +1,202 @@
+ <scroll-view class="mui-bg" scroll-y="true" style="height: 600px">
+
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+
+
+  <view class="box-contain mui-bg-body">
+  
+     <view class="input-itm">
+        <view class="input-title"><span class='hs'>*</span>标题</view>
+        <input class="input-box" placeholder-class='input-d' placeholder='请输入招工标题' value='{{hireTitle}}' bindinput="bindHireTitle"></input>
+     </view>
+ 
+      <view class="input-itm">
+        <view class="input-title"><span class='hs'>*</span>联系人</view>
+        <input class="input-box" placeholder-class='input-d' placeholder='请输入联系人' value="{{hireContacts}}" bindinput="bindHireContacts" ></input>
+      </view>
+
+      <view class="input-itm">
+        <view class="input-title"><span class='hs'>*</span>手机号</view>
+        <input type="number" placeholder-class='input-d' class="input-box" bindinput='bindHirePhone' value="{{hirePhone}}" placeholder='手机号'></input>
+      </view>
+
+      <view class="input-itm">
+        <view class="input-title" style="line-height:70rpx;"><span class='hs'>*</span>验证码</view>
+        <input class="input-box" type='number' placeholder-class='input-d'
+        placeholder='验证码' bindinput='bindHireCode' 
+        style="width:40%; display:inline-block;"></input>
+
+
+        <block wx:if="{{isInCode===1}}">
+           <button class="btn" bindtap='getVerifyCode'>获取验证码</button>
+        </block>
+
+
+
+ 
+
+
+        <block wx:else>
+          <button class="btn" style='opacity:0.6;'>{{isCodeTime}}s后再发送</button>
+        </block>
+      </view>
+
+      <!--
+      <view class="input-itm">
+        <view class="input-title">*截止日期</view>
+        <picker mode="date" value="{{date}}" start="2015-09-01" bindchange="bindDateChange">
+          <input class="input-box" disabled="disabled" value="{{hireDeadline}}"></input>
+        </picker>
+      </view>
+      -->
+
+      <view class="input-itm">
+        <view class="input-title">
+          <span class='hs'>*</span>地区
+        </view>
+          <!-- <picker mode="region" value="{{region}}" custom-item="{{customItem}}" bindchange="bindRegionChange">
+          <input class="input-box" placeholder='请选择地区' disabled="disabled" value="{{hireRegion}}"></input>
+        </picker>    -->
+
+
+
+          <picker mode="multiSelector" bindchange="bindLocalChange" bindcolumnchange="bindPickerColumnChange" value="{{localIndex}}" range="{{localArray}}">
+            <input class="input-box" placeholder='请选择地区' placeholder-class='input-d' disabled="disabled" value="{{localType}}">
+            </input>
+          </picker> 
+
+
+
+
+      </view>
+
+      <view class="input-itm">
+        <view class="input-title">工种</view>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <input placeholder='请选择招工类型' class="input-box" disabled="disabled" value="{{workerType}}"></input>
+        </picker>
+
+
+
+
+
+
+
+
+
+
+      </view>
+
+      <view class="input-itm">
+        <view class="input-title">人数</view>
+        <input class="input-box" type="number" value="{{hirePepoleNum}}" bindinput='bindHirePepoleNum' placeholder='输入需求人数' placeholder-class='input-d'></input>
+      </view>
+
+      <view class="input-itm">
+        <view class="input-title">价格</view>
+        <input class="input-box" value="{{hireSalary}}" bindinput='bindHiresalary' placeholder='输入价格' type='text' placeholder-class='input-d'></input>
+      </view>
+
+      <view class="input-itm">
+        <view class="input-title" style="float:none;">详情</view>
+        <input  fixed="true" class="input-area" auto-height='true' value="{{hireRequest}}"
+        placeholder='请输入招工详情' bindinput="bindHireRequest" placeholder-class='input-d' adjust-position="false"></input>
+      </view>
+
+      <view class="input-itm notes" wx:if="{{!isSubmitAble}}">
+        {{warnStr}}
+      </view>
+      <!-- <button disabled='{{!isSubmitAble}}' class="btn-submit" bindtap='doSubmit'>发布</button> -->
+
+
+
+    <button disabled='{{!isSubmitAble}}' class="btn-submit"  formType="submit">发布</button>
+  </view>
+
+
+
+</form>
+
+
+</scroll-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<view class="keep-out">
+
+  
+  <view class="keep-out-all"></view>
+  <view class="keep-out-m">
+    <view class="keep-select">
+        <view class="keep-line"></view>
+      <scroll-view scrolltoupper="distanceTop" scroll-with-animation="true" scroll-into-view="{{toView}}" bindscroll="scroll1" class="keep-select-flex" scroll-y="true" style="height:30px;">
+          <view wx:for="{{record1}}" wx:key="*this" class="select-option">{{item.province}}</view>
+      </scroll-view>
+
+      <scroll-view  bindscroll="scroll2"  class="keep-select-flex" scroll-y="true" style="height: 30px;">
+
+          <view wx:for="{{record2}}" wx:key="*this" class="select-option">{{item.city}}</view>
+      </scroll-view>
+
+      <scroll-view  bindscroll="scroll3" class="keep-select-flex" scroll-y="true" style="height: 30px;">
+
+         <view wx:for="{{record3}}" wx:key="*this" class="select-option">{{item.district}}</view>
+     
+      </scroll-view>
+    </view>
+
+  </view>
+
+
+</view> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <view class="keep-select-mo">
+          <scroll-view scroll-with-animation="true" scroll-into-view="{{toView}}" bindscroll="scroll1_1" class="keep-select-flex-mo" scroll-y="true"  style="{{moStyle1}}">
+          <view wx:for="{{record1_1}}" wx:key="*this" class="select-option-mo">{{item.province}}</view>
+      </scroll-view>
+
+          <scroll-view class="keep-select-flex-mo" scroll-y="true">
+
+          <view wx:for="{{record2_2}}" wx:key="*this" class="select-option-mo">{{item.city}}</view>
+      </scroll-view>
+
+      <scroll-view  class="keep-select-flex-mo" scroll-y="true">
+
+         <view wx:for="{{record3_3}}" wx:key="*this" class="select-option-mo">{{item.district}}</view>
+     
+      </scroll-view>
+
+
+    </view>   -->

@@ -1,0 +1,56 @@
+<!--pages/wd/wd.wxml-->
+<view class='wd'>
+<!--阴影框  -->
+    <view class='rec'>
+    <!--头像  -->
+    <image class='photo' src="{{userInfo.avatarUrl?userInfo.avatarUrl:'../../image/icon_logo.jpeg'}}"></image>
+    <!--姓名  -->
+    <view class='name'>{{userInfo.nickName}}</view>
+    <!--微信手机号  -->
+    <!--
+    <view class='mess'>
+      <span>微信:13131313131</span>
+      <span>手机号：12121212121</span>
+    </view>
+    -->
+    <view class='wode'>
+    <!--我的招工  -->
+    <view class='my_zg' bindtap='goMyHire'>
+        <span class="my">我的招工</span>
+        <span class="fh"><image src='../../image/fh.jpg'></image></span>
+    </view>
+    <!--我的机械  -->
+    <view class='my_jx' bindtap='goMyMachine'>
+        <span class="my">我的机械</span><span class="fh">
+          <image src='../../image/fh.jpg'></image>
+        </span>
+    </view>
+    <!--举报反馈  -->
+    <view class='jbfk' bindtap='goMyFeedBlack'>
+        <span class="my">举报反馈</span><span class="fh">
+          <image src='../../image/fh.jpg'></image>
+        </span>
+    </view>
+    <!--实名认证  -->
+     <view class='smrz' bindtap='goMyRealName'>
+        <span class="my">实名认证</span><span class="fh">
+          <image src='../../image/fh.jpg'></image>
+        </span>
+    </view>
+    <!--二维码  -->
+    <view class='jzg_logo'>
+        <view class='logo'><image src='../../image/grzx/logo.png'></image></view> 
+        <!-- <view class='logo'><image src='../../image/grzx/code.png'></image></view> -->
+       <view class='text1' >扫描关注公众号</view>
+       <view class='text'>查看更多信息</view>
+    </view>
+    <!--分割线  -->
+    <view class='line_center'></view>
+    <!--二维码  -->
+     <view class='ewm'>
+     <view class='code'>
+     <image src='../../image/code.png'></image>
+     </view></view> 
+    </view>
+    </view>
+</view>

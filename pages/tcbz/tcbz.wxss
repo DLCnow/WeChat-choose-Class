@@ -1,0 +1,77 @@
+
+/*滑动按钮  */
+ .btn{
+  float: left;
+  height: 15rpx;
+  width: 200rpx;
+  background-color: #87CEFA;
+  border-radius: 2000rpx;
+  margin: 20rpx 0rpx 0rpx 300rpx;
+} 
+/*分割线  */
+ .line{
+  border-radius: 10rpx;
+  border-bottom: 5rpx solid #f0f0f0;
+  margin-top: 60rpx;
+  box-shadow: 0rpx 0rpx 2rpx 2rpx #f0f0f0;
+} 
+
+/*同城班组  */
+.new_table{
+ float: left;
+    width: 700rpx;
+    height: 230rpx;
+    margin-top: 30rpx;
+    border-radius: 20rpx;
+    margin-left: 20rpx;
+    box-shadow: #e4ebf3 -1px 5px 6px;
+}
+.new_table dl dt image{
+ float: left;
+  width: 170rpx;
+  height: 170rpx;
+  margin: 25rpx 20rpx 0rpx 40rpx;
+  border-radius: 10rpx;
+}
+.new_table dl .xq{
+  margin-top: 25rpx;
+}
+.new_table dl view{
+  /* float: left; */
+  font-size: 25rpx;
+  margin-left: -300rpx;
+  line-height: 45rpx;
+}
+/*溢出处理  */
+
+.new_table dl .one{
+  font-size: 30rpx;
+  height: 40rpx;
+  width: 300rpx;
+  overflow: hidden;
+  
+}
+.new_table dl view span{
+color: #87CEFA;
+}
+/*数字  */
+.new_table .number{
+font-size: 40rpx;
+  color: #87CEFA;
+  margin-left: 10rpx;
+  margin-top: -50rpx;
+  margin-bottom: 50rpx;
+}
+.new_table dl .big{
+ font-size: 50rpx;
+  color: #A9A9A9;
+  float: right;
+  margin-top: -100rpx;
+  margin-right: 30rpx;
+  width: 50rpx;
+}
+.new_table dl .big .xq{
+ font-size: 25rpx;
+  color: #B8B8B8;
+  line-height: 188rpx;
+} 

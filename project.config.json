@@ -1,23 +1,26 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
-	"appid": "wx43568bdc80749e43",
-	"projectname": "dlc%20choose%20class%201",
-	"isGameTourist": false,
+	"libVersion": "1.9.93",
+	"appid": "wx3b335614728a708a",
+	"projectname": "jzgapp",
 	"condition": {
 		"search": {
 			"current": -1,
 			"list": []
 		},
 		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
 			"current": -1,
 			"list": []
 		},

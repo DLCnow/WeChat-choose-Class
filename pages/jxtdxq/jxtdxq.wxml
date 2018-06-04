@@ -1,0 +1,32 @@
+<!--机械团队详情  -->
+<view class='jxtdxq'>
+    <!--图片  -->
+    <image src='../../image/zgtx1.jpg'></image>
+    <view class='img'></view>
+    <!--信息详情  -->
+    <view class='xq'>
+        <view class='w'><view class='title'></view></view>
+        <!--工种  -->
+        <view class='kind'>工种：<text class='kn'></text></view>
+        <!--人数  -->
+        <view class='number'>
+              人数:<text class='nm'></text>
+        </view>
+        <!--地区  -->
+        <view class='area'>
+            地区:<text class='ae'></text>
+        </view>
+        <!--联系人  -->
+        <view class='phone'>
+            联系人:<text class='pn'></text>
+        </view>
+        <!--联系方式  -->
+        <view class='contact'>
+            联系方式:<text class='ct'></text>
+        </view>
+        <!--备注  -->
+        <view class='remark'>
+            备注:<view class='rm'></view>
+        </view>
+    </view>
+</view>

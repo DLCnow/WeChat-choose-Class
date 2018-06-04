@@ -1,0 +1,118 @@
+<view class="all_zgxx" style='position: relative;'>
+<!--搜索框  --> 
+  <view class='search'>
+    <view class='search-all'>
+        <input class="search-input" bindinput="bindSearchStr" value="{{queryWord}}" placeholder='搜索招工信息'></input>
+        <view class='btn' bindtap='doSearch'>
+          <image class="searchIcon" src='../../image/Path.png'></image> 
+        </view>
+    </view>
+  </view>
+  <!--地区工种 -->
+  <view class='area'>
+      <view class='dq'>
+       <picker mode="multiSelector" bindchange="bindMultiPickerAreaChange" bindcolumnchange="bindMultiPickerColumnAreaChange" value="{{areaIndex}}" range="{{areaNamesArray}}">
+        <view class="flter-itm">
+        {{areName}}
+
+         <view class='flter-image'> <image src='../../image/xl.jpg'></image>  </view>
+        </view>
+     </picker> 
+       <!-- <view class='image'> <image src='../../image/xl.jpg'></image>  </view> -->
+      </view>
+      <view class='center'>|</view>
+       <view class='gz'>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{typeIndex}}" range="{{typeArray}}">
+        <view class="flter-itm">
+          {{typeName}}
+           <view class='flter-image'> <image src='../../image/xl.jpg'></image>  </view>
+        </view>
+     </picker>
+     <!-- <view class='image'>
+      <image src='../../image/xl.jpg'></image>
+      </view> -->
+      </view> 
+  </view>
+
+<view class='table content-list'>
+   <view class="item" wx:for="{{hires}}" wx:key="*this" data-name="{{item.id}}" bindtap="goHireDetail">
+      <view class="title">{{item.project.name}}</view>
+        <!-- <view class="desc">招聘状态：{{item.status.text}}</view> -->
+           <view class="desc">薪酬价格：{{item.salary}}</view> 
+      <view class="desc">发布时间：{{item.publishedTime}}</view>
+    
+      <view class="img-v">
+          <image class="img" src="../../image/more.png"></image>
+      </view>
+       <block wx:if="{{item.status.text === '正在招聘'}}">
+          <view class="right-top blue">
+          正在招聘
+        </view>
+        <view class="left-border">
+        </view>
+        
+      </block>
+       <block wx:if="{{item.status.text !== '正在招聘'}}">
+        <view class="left-border grey">
+        </view>
+          <view class="right-top grey">
+          已招满
+        </view>
+      </block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </view>
+  </view>
+
+<!--
+  <view class='table'>
+    <view class='new_table1' wx:for="{{hires}}" data-name="{{item.id}}" bindtap="goHireDetail">
+          <dl>
+        <view class='table' >
+           <image class='img'src='../../image/zgtx1.jpg'></image>
+           <view class='table_details'>
+                <view class='title'>{{item.project.name}}</view>
+                <view>联系人：<span>{{item.contacts}}</span></view>
+                <view>发布时间：<span>{{item.publishedTime}}</span></view>
+                <view>招工动态:<span>{{item.status.text}}</span></view>
+            </view>
+            <view class='img'><image src='../../image/sy/fh.jpg'></image></view>
+            <view class='xq_text'>{{item.project.district.title}}</view>
+        </view>
+        </dl>
+    </view>
+</view>
+-->
+
+</view>
+<loading hidden="{{hiddenLoading}}" bindchange="loadingChange">
+    加载中...
+</loading>
+
+<view class="modal-box" hidden="{{isMaskHidden}}">
+   <image src="../../image/gb.png" class="modal-close" bindtap="hideMask"></image>
+   <view class="v-share">
+      点击分享到工友群，
+      <view>方便更多工友</view>
+   </view>
+</view>
+
+<image class="side-tool" style="z-index: 11;" src = "../../image/icon_share.png">
+  分享
+</image>
+<button class="side-tool" style="opacity:0;z-index: 12;" open-type="share">
+</button>

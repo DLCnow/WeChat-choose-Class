@@ -1,0 +1,299 @@
+
+.jbfk{
+  padding: 0 20rpx;
+}
+/*举报反馈  */
+/*姓名  */
+.name{
+  float: left;
+  border-bottom: 1rpx solid #f0f0f0;
+  width: 700rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.name .nm{
+  float: left;
+  padding-left: 10rpx;
+  font-size: 35rpx;
+  width: 200rpx;
+}
+.name .p_nm{
+  /* margin-left: 270rpx; */
+    font-size: 30rpx;
+}
+/*性别  */
+.sex{
+  float: left;
+  border-bottom: 1rpx solid #f0f0f0;
+  margin-left: 40rpx;
+  margin-top: 50rpx;
+  padding-bottom: 15rpx;
+  width: 700rpx;
+}
+.sex .sx{
+  float: left;
+  padding-left: 10rpx;
+  font-size: 35rpx;
+}
+.sex .p_sx{
+   margin-left: 270rpx;
+    font-size: 30rpx;
+}
+.sex image{
+  float: right;
+   width:20rpx;
+  height: 20rpx;
+  margin-top: -40rpx;
+  margin-right: 200rpx;
+}
+/*电话号码  */
+.phone{
+   float: left;
+  border-bottom: 1rpx solid #f0f0f0;
+  /* margin-left: 40rpx;
+  margin-top: 50rpx;
+  padding-bottom: 15rpx; */
+  width: 700rpx;
+    height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.phone .pn{
+  float: left;
+  padding-left: 10rpx;
+  font-size: 35rpx;
+  width: 200rpx;
+}
+.phone .p_pn{
+  /* margin-left: 270rpx; */
+    font-size: 30rpx;
+}
+/*地区  */
+.area{
+  float: left;
+  border-bottom: 1rpx solid #f0f0f0;
+  margin-left: 40rpx;
+  margin-top: 50rpx;
+  padding-bottom: 15rpx;
+  width: 700rpx;
+}
+.area .ae{
+  float: left;
+  padding-left: 10rpx;
+  font-size: 35rpx;
+}
+.area .p_ae{
+   margin-left: 270rpx;
+    font-size: 30rpx;
+}
+.area image{
+  float: right;
+   width:25rpx;
+  height: 15rpx;
+  margin-top: -40rpx;
+  margin-right: 200rpx;
+}
+/*民族  */
+.nation{
+  float: left;
+  border-bottom: 1rpx solid #f0f0f0;
+  margin-left: 40rpx;
+  margin-top: 50rpx;
+  padding-bottom: 15rpx;
+  width: 700rpx;
+}
+.nation .na{
+  float: left;
+  padding-left: 10rpx;
+  font-size: 35rpx;
+}
+.nation .p_na{
+  margin-left: 270rpx;
+    font-size: 30rpx;
+}
+/*黑名单原因  */
+.blacklist{
+  float: left;
+  border-bottom: 1rpx solid #f0f0f0;
+    /* margin-left: 40rpx;   */
+  /* margin-top: 50rpx; */
+  /* padding-bottom: 15rpx; */
+  width: 700rpx;
+  /* height: 130rpx; */
+
+
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.blacklist .bk{
+  float: left;
+  padding-left: 10rpx;
+  font-size: 35rpx;
+  width: 200rpx;
+}
+.blacklist .p_bk{
+  /* margin-left: 270rpx; */
+    font-size: 30rpx;
+}
+/* 警告字段 */
+.informerWarn{
+  float: left;
+  border-bottom: 1rpx solid #f0f0f0;
+  width: 700rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color:red;
+}
+/*举报人联系方式  */
+.informer{
+  float: left;
+  border-bottom: 1rpx solid #f0f0f0;
+  /* margin-left: 40rpx; */
+  /* margin-top: 50rpx; */
+  /* padding-bottom: 15rpx; */
+  width: 700rpx;
+  margin-bottom: 10px; 
+
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+
+
+.informer .fm{
+  float: left;
+  padding-left: 10rpx;
+  font-size: 35rpx;
+  width: 200rpx;
+}
+.informer .p_fm{
+  /* margin-left: 270rpx; */
+    font-size: 30rpx;
+}
+/*提交按钮  */
+.sb{
+  display: block;
+  margin: 0 auto;
+  margin-top: 50rpx !important;
+  background-color: #ffca40;
+  color: white;
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.all-content{
+  padding: 15rpx
+}
+.content-item{
+  line-height: 1.5rem;
+  color: #c1c1c1;
+}
+.all-content{
+  margin-top: 30rpx;
+}
+.content-title{
+  opacity: .6;
+  color:red;
+  font-size: 45rpx;
+  width: 100%;
+  text-align: left;
+}
+
+.menu{
+  height: 2.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu>view{
+  flex: 1;
+  height: 100%;
+  background-color: #4da1ff;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.hot-t{
+  min-width: 3rem;
+  color: #fff;
+  font-size: 15px;
+}
+
+.hot-active{
+  background-color: #80e2da;
+  border-radius: 50rpx;
+  padding: 10rpx 20rpx;
+}
+
+.content{
+  width: 100%;
+  margin: 0 auto;
+  min-height: 5rem;
+}
+
+.content-title{
+  min-width: 8rem;
+  min-height: 2rem;
+  text-align: center;
+  padding: 1rem 0;
+  color: rgb(160,160,160);
+}
+
+.content-title b{
+  display: block;
+  margin-bottom: .3rem;
+}
+
+.content-img{
+  margin: 0 auto;
+  width: 20rem;
+  height: 36rem;
+  display: block;
+  position: relative;
+  margin-top: 1rem;
+}
+.content-img>image{
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  top: -4rem;
+}
+
+.content-btn{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  height: 3rem;
+  width: 100%;
+}
+
+.btn-left{
+  float: left;
+  margin-left: .5rem;
+  height: 2rem;
+  width: 2rem;
+}
+.btn-left>image{
+  height: 100%;
+  width: 100%;
+}
+
+.btn-right{
+  float: right;
+  margin-right: .5rem;
+  height: 2rem;
+  width: 2rem;
+}
+.btn-right>image{
+  height: 100%;
+  width: 100%;
+}

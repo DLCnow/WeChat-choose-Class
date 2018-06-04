@@ -1,0 +1,138 @@
+/*我的招工  */
+/*我的招工列表一  */
+.table_zg1{
+    float: left;
+    width: 700rpx;
+    height: 230rpx;
+    margin-top: 60rpx;
+    border-radius: 20rpx;
+    margin-left: 20rpx;
+    box-shadow: #e4ebf3 -1px 5px 6px;
+}
+.table_zg1 .table{
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+.table_zg1 dl image{
+  float: left;
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 10rpx;
+}
+.table_zg1 .table_details{
+  float: left;
+  font-size: 25rpx;
+  line-height: 45rpx;
+  margin-left: 20rpx;
+}
+/*溢出处理  */
+.table_zg1 .title{
+  font-size: 30rpx;
+  overflow: hidden;
+  height: 40rpx;
+  width: 300rpx;
+}
+.table_zg1 span{
+  color: #54a3f1;
+}
+.table_zg1 .xq_text{
+  float: right;
+  font-size: 25rpx;
+  margin-top: 140rpx;
+  color: #54a3f1;
+  margin-right: -30rpx;
+}
+.table_zg1 .img image{
+  float: right;
+  margin-right: 28rpx;
+  margin-top: 50rpx;
+  width: 15rpx;
+  height: 25rpx;
+}
+
+/*我的招工列表二  */
+.table_zg2{
+    float: left;
+    width: 700rpx;
+    height: 230rpx;
+    margin-top: 10rpx;
+    border-radius: 20rpx;
+    margin-left: 20rpx;
+    box-shadow: #e4ebf3 -1px 5px 6px;
+}
+.table_zg2 .table{
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+.table_zg2 dl image{
+  float: left;
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 10rpx;
+}
+.table_zg2 .table_details{
+  float: left;
+  font-size: 25rpx;
+  line-height: 45rpx;
+  margin-left: 20rpx;
+}
+/*溢出处理  */
+.table_zg2 .title{
+  font-size: 30rpx;
+  overflow: hidden;
+  height: 40rpx;
+  width: 300rpx;
+}
+.table_zg2 .title{
+  font-size: 30rpx;
+}
+.table_zg2 span{
+  color: #54a3f1;
+}
+.table_zg2 .xq_text{
+  float: right;
+  font-size: 25rpx;
+  margin-top: 140rpx;
+  color: #54a3f1;
+  margin-right: -30rpx;
+}
+.table_zg2 .img image{
+  float: right;
+  margin-right: 28rpx;
+  margin-top: 50rpx;
+  width: 15rpx;
+  height: 25rpx;
+}
+
+
+.sim-window{
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 60%;
+  width: 60%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.sim-img{
+  height: 100px;
+  width: 200px;
+}
+
+.sim-text{
+  color: #959595;
+  font-size: 22px;
+  text-align: center;
+}
+
+.sim-button{
+  color: #fff;
+  background-color: #54a3f1;
+  padding: 8px 40px;
+  border-radius: 3px;
+}

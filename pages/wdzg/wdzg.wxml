@@ -1,0 +1,99 @@
+<view class='wdzg'>
+   <view class='table content-list' style="margin-top:0rpx;">
+       <view class="item " wx:for="{{myHires}}" data-name="{{item.id}}" wx:key="*this" bindtap="goMyHireDetail">
+          <view class="title">{{item.project.name}}</view>
+          <view class="desc">发布时间：{{item.publishedTime}}</view>
+          <view class="desc">招聘状态：{{item.status.text}}</view>
+          <view class="img-v">
+              <image class="img" src="../../image/more.png"></image>
+          </view>
+
+
+
+      <block wx:if="{{item.status.text === '正在招聘'}}">
+          <view class="right-top blue">
+          正在招聘
+        </view>
+        <view class="left-border">
+        </view>
+        
+      </block>
+       <block wx:if="{{item.status.text !== '正在招聘'}}">
+        <view class="left-border grey">
+        </view>
+          <view class="right-top grey">
+          已招满
+        </view>
+      </block>
+
+
+
+
+
+        </view>
+   </view>
+   <loading hidden="{{hiddenLoading}}" bindchange="loadingChange">
+    加载中...
+   </loading>
+</view>
+
+
+
+
+
+
+<view class="sim-window" style='display:{{simWindow}};'>
+
+  <image class="sim-img" src="../../image/logo23.png"></image>
+
+
+  <view class="sim-text">还没发布招工哦</view>
+
+  <view class="sim-button" bindtap="simJump">立即发布</view>
+
+
+</view>
+
+
+
+
+
+
+
+<!--
+<view class='wdzg'>
+<view class='table content-list'>
+   <view class="item {{(index % 2 == 1) ? 'oddBgColor':''}}" wx:for="{{hires}}" data-name="{{item.id}}" bindtap="goHireDetail">
+      <view class="title">{{item.project.name}}</view>
+      <view class="desc">发布时间：{{item.publishedTime}}</view>
+      <view class="desc">招聘状态：{{item.status.text}}</view>
+      <view class="img-v">
+          <image class="img" src="../../image/more.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+</view>
+<loading hidden="{{hiddenLoading}}" bindchange="loadingChange">
+    加载中...
+</loading>
+-->
+ <!---
+    <view class='table_zg1' wx:for="{{myHires}}" data-name="{{item.id}}" bindtap="goMyHireDetail">
+        <dl>
+       
+            <view class='table'>
+                <image class='img'src='../../image/zgtx.jpg'></image>
+                <view class='table_details'>
+                    <view class='title'>{{item.project.name}}</view>
+                    <view>联系人：<span>{{item.contacts}}</span></view>
+                    <view>发布时间：<span>{{item.publishedTime}}</span></view>
+                    <view>招工动态:<span>{{item.status.text}}</span></view>
+                </view>
+               
+            <view class='img'><image src='../../image/sy/fh.jpg'></image></view>
+            <view class='xq_text'>{{item.project.district.title}}</view>
+            </view>                         
+        </dl>
+    </view>
+     --->

@@ -1,0 +1,29 @@
+<view class="tcjx">
+    <view class='map'>
+        <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 200px;"></map>
+    </view>
+    <!--滑动按钮  -->
+    <view class='btn'></view>
+    <!--分割线  -->
+    <view class='line'></view>
+    <!--同城机械列表  -->
+    <view class='new_table'>
+      <dl>
+          <dt><image src='../../image/jxtx1.jpg'></image></dt>
+            <view class='xq'>
+              <view class='one'></view>
+              <view>联系人：<span>吴工</span></view>
+              <view>型号<span>三一195 挖掘机</span></view>
+              <view>机械动态：<span>空闲中</span></view>
+            </view>
+            <view class='big'>
+             <!-- 数字  -->
+            <view class='number'>
+                1
+            </view>
+                <span>详情</span>
+            </view>
+      </dl>
+    </view>
+
+</view>

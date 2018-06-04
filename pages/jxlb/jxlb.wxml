@@ -1,0 +1,272 @@
+
+
+
+<view>
+  <view class="swiper-tab">
+    <view id='list1' class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">机械列表
+    </view>
+
+    <!-- <view class='line_center'> -->
+    <!-- </view> -->
+    <view id='list2' class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">机械入驻
+    </view>
+  </view>
+
+  <swiper style="height:{{height}}rpx" current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange">
+      <swiper-item>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 机械列表 -->
+        <view class='table content-list' style="margin-top:0rpx;">
+
+
+
+
+
+
+
+
+
+  <view class='area'>
+
+
+        <!-- 全部地区 -->
+      <view class='dq'>
+       <picker mode="multiSelector" bindchange="bindMultiPickerAreaChange" bindcolumnchange="bindMultiPickerColumnAreaChange" value="{{areaIndex}}" range="{{areaNamesArray}}">
+        <view class="flter-itm">
+        {{areName}}
+         <view class='flter-image'> <image src='../../image/xl.jpg'></image>  </view>
+        </view>
+     </picker> 
+       <!-- <view class='image'> <image src='../../image/xl.jpg'></image>  </view> -->
+      </view>
+      <view class='center'>|</view>
+
+
+        <!-- 机械分类 -->
+       <view class='gz'>
+          <picker mode="multiSelector" bindchange="bindMechanicalChange" bindcolumnchange="bindMechanicalColumnChange" value="{{typeIndex}}" range="{{typeArray}}">
+            <view class="flter-itm">
+              {{typeName}}
+              <view class='flter-image'> <image src='../../image/xl.jpg'></image>  </view>
+            </view>
+         </picker>
+     <!-- <view class='image'>
+      <image src='../../image/xl.jpg'></image>
+      </view> -->
+      </view> 
+  </view>
+
+
+          <view class="item" wx:for="{{machineries}}" wx:key="*this" data-name="{{item.id}}" bindtap="goMachineDetil">
+              <!-- <view class="title">{{item.title}}</view> -->
+               <view class="desc">机械规格：{{item.xinghao==null?'':item.xinghao}}</view>
+              <view class="desc">机械分类：{{item.type.text}}</view>
+              <view class="desc">发布时间：{{item.createDate}}</view>
+              <view class="desc ">机械状态 <span class="blue">{{item.status.text}}</span></view>
+              <view class="img-v">
+                  <image class="img" src="../../image/more.png"></image>
+              </view>
+
+
+
+
+
+
+
+<!-- 
+      <block wx:if="{{item.status.text === '招租中'}}">
+          <view class="right-top blue">
+          招租中
+        </view>
+        <view class="left-border">
+        </view>
+        
+      </block>
+
+
+       <block wx:if="{{item.status.text !== '招租中'}}">
+        <view class="left-border grey">
+        </view>
+          <view class="right-top grey">
+          已完成
+        </view>
+      </block> -->
+
+
+
+          </view>
+          </view>
+
+      </swiper-item>
+      <swiper-item>
+        <!-- 我要入驻 -->
+        <!--机械入驻  -->
+        <view style="padding: 0rpx 20rpx;">
+<!-- 
+          <view class="input-itm">
+              <view class="input-title">项目名称</view>
+              <input class="input-box" placeholder-class='input-d' type='text' placeholder='项目名称' bindinput="bindTitleInput"></input>
+          </view>  -->
+
+
+          <!--型号规格  -->
+          <view class="input-itm">
+              <view class="input-title">型号规格</view>
+              <input class="input-box" placeholder-class='input-d' type='text' placeholder='型号规格' bindinput='bindShuomingInput'></input>
+          </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+          <view class="input-itm">
+              <view class="spc">机械分类</view>
+              <!-- <input class="input-box" placeholder-class='input-d' type='text' placeholder='机械分类' bindinput='bindTypesInput'></input> -->
+              <picker  style="display:inline-block;" mode="multiSelector" bindchange="bindMechanicalFormChange" bindcolumnchange="bindMechanicalFormColumnChange" value="{{jxlIndex}}" range="{{jxlNamesArray}}">
+                  <view class="flter-itm special">
+                    {{jxlName}}
+                  <view class='flter-image'> <image src='../../image/xl.jpg'></image>  </view>
+                  </view>
+              </picker>
+
+
+          </view>
+          <view class="input-itm">
+              <view class="input-title">数量</view>
+              <input class="input-box" placeholder-class='input-d' type='number' placeholder='数量' bindinput='bindAmountInput'></input>
+          </view>
+
+          <view class="input-itm">
+              <view class="input-title">价格</view>
+              <input class="input-box" placeholder-class='input-d' type='number' placeholder='价格' bindinput='bindPriceInput'></input>
+          </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 机械地区信息 -->
+          <view class="input-itm">
+              <view class="spc">地区</view>
+              <!-- <input class="input-box" placeholder-class='input-d' type='text' placeholder='地区' bindinput='bindStreetAddressInput'></input> -->
+
+
+
+             <picker style="display:inline-block;" mode="multiSelector" bindchange="bindMultiPickerAreaChange3" bindcolumnchange="bindMultiPickerColumnAreaChange3" value="{{jxIndex}}" range="{{jxNamesArray}}">
+        <view class="flter-itm special" style="">
+        {{jxName}}
+        <view class='flter-image'> <image src='../../image/xl.jpg'></image>  </view>
+        </view>
+     </picker> 
+
+
+          </view>
+
+          <view class="input-itm">
+              <view class="input-title">联系人</view>
+              <input class="input-box" placeholder-class='input-d' type='text' placeholder='联系人' bindinput='bindContactsInput'></input>
+          </view>
+
+          <view class="input-itm">
+              <view class="input-title">联系电话</view>
+              <input class="input-box" placeholder-class='input-d' type='number' placeholder='联系电话' bindinput='bindMoblieInput'></input>
+          </view>
+
+
+
+           <view class="input-itm">
+              <view class="input-title">验证码</view>
+              <input style="width:44%" class="input-box" placeholder-class='input-d' type='number' placeholder='验证码' bindinput='bindCodeInput'></input>
+                <!-- <button class="btn" bindtap="getVerifyCode">获取验证码</button> -->
+
+
+
+
+
+
+
+        <block wx:if="{{isInCode===1}}">
+           <button class="btn" bindtap='getVerifyCode'>获取验证码</button>
+        </block>
+        <block wx:else>
+          <button class="btn" style='opacity:0.6;'>{{isCodeTime}}s后再发送</button>
+        </block>
+
+
+               <!-- <view class="vei-code" catchtap='getVerifyCode'>获取验证码</view> -->
+          </view>
+
+
+          <view class="input-itm">
+              <view class="input-title">备注</view>
+              <input class="input-box" placeholder-class='input-d' type='text' placeholder='备注' bindinput='bindShuoInput'></input>
+          </view>
+          
+
+
+
+        
+
+
+            <view class="input-itm notes passwork" style="color:red;margin-top: 10rpx;" wx:if="{{!isSubmitAble}}">
+    {{warnStr}}
+  </view>
+
+
+          <!--提交按钮  -->
+          <view class='remark'>
+            <button class="btn-sub" style="opacity: {{opacity}};" bindtap='machineSubmit' disabled='{{!isSubmitAble}}' >提交</button>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+</view>
+
+<loading hidden="{{hiddenLoading}}" bindchange="loadingChange">
+  加载中...
+</loading>

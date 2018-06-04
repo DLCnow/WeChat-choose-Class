@@ -1,0 +1,139 @@
+/*招工详情  */
+
+/*信息  */
+.particulars{
+  float: left;
+  width: 100%;
+  border-bottom: 1rpx solid #f0f0f0;
+  border-top: 1rpx solid #f0f0f0;
+  margin-top: 30rpx;
+  box-shadow: 0rpx 0rpx 18rpx 3rpx #f0f0f0;
+}
+.particulars .one{
+  float: left;
+  width: 100%;
+}
+/*标题  */
+ .particulars .title{
+  float: left;
+  margin: 30rpx 0rpx 0rpx 30rpx;
+   width: 500rpx; 
+  /* height: 150rpx; */
+  font-size: 40rpx;
+  font-weight: bold;
+  overflow: hidden;
+}
+/*班组  */
+.particulars .bz{
+float: left;
+font-size: 25rpx;
+margin: 40rpx 0rpx 0rpx 120rpx;
+}
+/*工资  */
+.particulars .money{
+  float: left;
+  font-size: 35rpx;
+  margin: 30rpx 0rpx 0rpx 30rpx;
+  width: 100%;
+}
+.particulars .gz{
+  margin-left: 90rpx;
+  color: #4da1ff;  
+}
+/*招工人数  */
+.particulars .pepople_number{
+  float: left;
+  font-size: 35rpx;
+  width: 100%;
+  margin: 30rpx 0rpx 0rpx 30rpx;
+}
+.particulars .zgrs{
+  color: #4da1ff;
+  margin-left: 25rpx;
+}
+/*发布时间  */
+.particulars .time{
+  font-size: 35rpx;
+  float: left;
+  margin: 30rpx 0rpx 50rpx 30rpx;
+}
+.particulars .fbsj{
+  margin-left: 25rpx;
+  color: #4da1ff;
+}
+/*地址联系方式  */
+ .ContactWay{
+  float: left;
+  width: 100%;
+  border-bottom: 1rpx solid #f0f0f0;
+  border-top: 1rpx solid #f0f0f0;
+  box-shadow: 0rpx 0rpx 18rpx 3rpx #f0f0f0;
+  margin-top: 50rpx;
+}
+
+.address{
+  
+}
+
+.ContactWay .address image{
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+  margin: 30rpx 0rpx 0rpx 30rpx;
+}
+
+.ContactWay .address .text-address{
+    float: left;
+    font-size: 30rpx;
+    margin: 30rpx 0rpx 0rpx 30rpx;
+    line-height:9px;
+}
+
+.m-address{
+
+}
+
+/*下划线  */
+.ContactWay .line{
+  float: left;
+  width: 700rpx;
+  height: 2rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  margin: 10rpx 40rpx 0rpx 30rpx;
+}
+/*联系人  */
+.ContactWay .linkman{
+  float: left;
+  margin: 45rpx 0rpx 0rpx 30rpx;
+  font-size: 35rpx;
+  width: 100%;
+}
+.ContactWay .nm{
+  color: #4da1ff;
+  margin-left: 35rpx;
+  }
+  /*联系方式  */
+    .ContactWay .phone{
+    float: left;
+    font-size: 35rpx;
+    margin: 45rpx 0rpx 0rpx 30rpx;
+  }
+  .ContactWay .lxfs{
+    color: #4da1ff;
+    margin-left: 25rpx;
+  }
+  /*招工备注  */
+    .ContactWay .remark{
+    float: left;
+    font-size: 35rpx;
+    margin: 35rpx 0rpx 50rpx 30rpx;
+  }
+  .ContactWay .zgbz{
+    float: right;
+    color: #4da1ff;
+    font-size: 28rpx;
+    width: 400rpx;
+    margin-left: 25rpx;
+    overflow: hidden;
+  }
+

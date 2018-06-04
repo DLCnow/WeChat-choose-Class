@@ -1,0 +1,207 @@
+/*我的机械  */
+/*机械列表一  */
+.table_jx1{
+  position: relative;
+    float: left;
+    width: 700rpx;
+    /* height: 230rpx; */
+    margin-top: 60rpx;
+    border-radius: 8rpx;
+    margin-left: 20rpx;
+    box-shadow: #e4ebf3 -1px 5px 6px;
+}
+.table_jx1 .table{
+  /* margin-top: 30rpx; */
+  /* margin-left: 30rpx; */
+  position: relative;
+}
+.table_jx1 dl image{
+  float: left;
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 10rpx;
+}
+.table_jx1 .table_details{
+  float: left;
+  font-size: 25rpx;
+  line-height: 45rpx;
+  margin-left: 20rpx;
+}
+/*溢出处理  */
+.table_jx1 .title{
+  font-size: 30rpx;
+  overflow: hidden;
+  height: 40rpx;
+  width: 300rpx;
+}
+.table_jx1 span{
+  color: #54a3f1;
+}
+.table_jx1 .xq_text{
+  float: right;
+  font-size: 25rpx;
+  margin-right: 28rpx;
+  margin-top: 140rpx;
+  color: #d3d1e9;
+}
+
+/*机械列表二  */
+.table_jx2{
+    float: left;
+    width: 700rpx;
+    height: 230rpx;
+    margin-top: 10rpx;
+    border-radius: 20rpx;
+    margin-left: 20rpx;
+    box-shadow: #e4ebf3 -1px 5px 6px;
+}
+.table_jx2 .table{
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+.table_jx2 dl image{
+  float: left;
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 10rpx;
+}
+.table_jx2 .table_details{
+  float: left;
+  font-size: 25rpx;
+  line-height: 45rpx;
+  margin-left: 20rpx;
+}
+/*溢出处理  */
+.table_jx2 .title{
+  font-size: 30rpx;
+  overflow: hidden;
+  height: 40rpx;
+  width: 300rpx;
+}
+.table_jx1 .title{
+  font-size: 30rpx;
+}
+.table_jx2 span{
+  color: #54a3f1;
+}
+.table_jx2 .xq_text{
+  float: right;
+  font-size: 25rpx;
+  margin-right: 28rpx;
+  margin-top: 140rpx;
+  color: #d3d1e9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*部分修改处理*/
+.item .desc{
+  font-size: 26rpx;
+  color: rgb(137, 137, 137);
+}
+
+
+.left-border{
+  z-index: 1;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20rpx;
+  height: 100%;
+  background-color: rgba(77,161,255,1);
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+}
+
+.right-top{
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100rpx;
+  height: 40rpx;
+  font-size: 22rpx;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  border-bottom-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.blue{
+  background-color: rgba(77,161,255,1);
+}
+
+.grey{
+  background-color: rgba(188,188,188,1);
+}
+.swpier-it navigator{
+  height: 100%;
+  width: 100%;
+}
+.swpier-it navigator image{
+  height: 100%;
+  width: 100%;
+}
+.more-btn{
+  cursor: pointer;
+  padding: 30rpx 0;
+  text-align: center; 
+  font-size: 30rpx;
+  color:  rgba(77,161,255,1);
+}
+
+
+
+/*部分修改处理*/
+.item {
+  box-shadow: 0 0 0;
+}
+.item .desc{
+  font-size: 26rpx;
+  color: rgb(137, 137, 137);
+}
+
+ .item .title{
+  height: 40rpx;
+  overflow: hidden;
+  width: 434rpx;
+  font-size: 30rpx;
+  margin-top: -3rpx;
+}
+
+
+.blue{
+  height: 100%;
+  width: 100%;
+  padding: 0  1rem;
+  color:rgba(77,161,255,1);
+  background-color: #fff;
+}
+
+
+
+
+.item .desc{
+  color: #000;
+}
+.input-box{
+  border: 1rpx solid #a09d9d;
+}

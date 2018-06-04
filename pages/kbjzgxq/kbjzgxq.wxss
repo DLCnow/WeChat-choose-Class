@@ -1,0 +1,347 @@
+/*可编辑招工详情   */
+/*信息  */
+.particulars{
+  float: left;
+  width: 100%;
+  border-bottom: 1rpx solid #f0f0f0;
+  border-top: 1rpx solid #f0f0f0;
+  margin-top: 30rpx;
+  box-shadow: 0rpx 0rpx 18rpx 3rpx #f0f0f0;
+}
+.particulars .one{
+  float: left;
+  width: 100%;
+}
+/*标题  */
+ .particulars .title{
+  float: left;
+  margin: 30rpx 0rpx 0rpx 30rpx;
+   width: 500rpx; 
+  /* height: 150rpx; */
+  font-size: 40rpx;
+  font-weight: bold;
+  overflow: hidden;
+}
+/*班组  */
+.particulars .bz{
+float: left;
+font-size: 25rpx;
+margin: 40rpx 0rpx 0rpx 120rpx;
+}
+/*价格  */
+.particulars .money{
+  float: left;
+  font-size: 35rpx;
+  margin: 30rpx 0rpx 0rpx 30rpx;
+  width: 100%;
+}
+.particulars .gz{
+  margin-left: 90rpx;
+  color: #4da1ff;  
+}
+/*机械种类  */
+.particulars .pepople_number{
+  float: left;
+  font-size: 35rpx;
+  width: 100%;
+  margin: 30rpx 0rpx 0rpx 30rpx;
+}
+.particulars .zgrs{
+  color: #4da1ff;
+  margin-left: 25rpx;
+}
+/*发布时间  */
+.particulars .time{
+  font-size: 35rpx;
+  float: left;
+  margin: 30rpx 0rpx 50rpx 30rpx;
+}
+.particulars .fbsj{
+  margin-left: 25rpx;
+  color: #4da1ff;
+}
+/*地址联系方式  */
+ .ContactWay{
+  float: left;
+  width: 100%;
+  border-bottom: 1rpx solid #f0f0f0;
+  border-top: 1rpx solid #f0f0f0;
+  box-shadow: 0rpx 0rpx 18rpx 3rpx #f0f0f0;
+  margin-top: 50rpx;
+}
+.ContactWay .address image{
+width: 50rpx;
+height: 50rpx;
+float: left;
+margin: 30rpx 0rpx 0rpx 30rpx;
+}
+.ContactWay .address .text-address{
+  float: left;
+    font-size: 30rpx;
+    margin: 30rpx 0rpx 0rpx 80rpx;
+    width:550rpx;
+    height: 80rpx;
+    overflow: hidden;
+}
+/*下划线  */
+.ContactWay .line{
+  float: left;
+  width: 700rpx;
+  height: 2rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  margin: 10rpx 40rpx 0rpx 30rpx;
+}
+/*联系人  */
+.ContactWay .linkman{
+  float: left;
+  margin: 45rpx 0rpx 0rpx 30rpx;
+  font-size: 35rpx;
+  width: 100%;
+}
+.ContactWay .nm{
+  color: #4da1ff;
+  margin-left: 35rpx;
+  }
+  /*联系方式  */
+    .ContactWay .phone{
+    float: left;
+    font-size: 35rpx;
+    margin: 45rpx 0rpx 0rpx 30rpx;
+    width: 100%;
+  }
+  .ContactWay .lxfs{
+    color: #4da1ff;
+    margin-left: 25rpx;
+  }
+  /*机械备注  */
+  .remark{
+    float: left;
+    font-size: 35rpx;
+    margin: 35rpx 0rpx 0rpx 30rpx;
+    width: 100%；
+  }
+   .zgbz{
+     float: right; 
+    color: #4da1ff;
+    font-size: 28rpx;
+    width: 400rpx;
+    margin-left: 25rpx;
+    /* overflow: hidden; */
+
+  }
+  /*机械状态  */
+  .jxzt text{
+    float: left;
+  }
+  .jxzt{
+    float: left;
+  margin: 20rpx 0rpx 50rpx 30rpx;
+  font-size: 35rpx;
+  width: 100%;
+  }
+  .jxzt .zt{
+    float: left;
+        color: #4da1ff;
+        font-size: 25rpx;
+    margin-left: 10rpx;
+    margin-top: 5rpx;
+  }
+.ContactWay image{
+  width: 25rpx;
+  height: 15rpx;
+  margin-left: 30rpx;
+}
+ /*提交按钮  */
+   .btn{
+    float: left;
+    width: 350rpx;
+    height: 80rpx;
+    background-color: #fdc841;
+    color: white;
+    line-height: 80rpx;
+  } 
+  .p-black-normal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  .p-black-normal:before,
+  .p-black-normal:after{
+    content:" ";
+    display: table;
+  }
+
+
+  .p-black-normal:after{
+    clear:both;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+image{
+ width:70rpx;
+ height:70rpx;
+}
+
+.mui-view{
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    /* list-style: none; */
+    background-color: #fff;
+    /* border-bottom: 1px solid #c1c1c1; */
+    /* height: 2.8rem; */
+    /* line-height: 2.8rem; */
+}
+
+.mui-cell{
+    /* list-style: none; */
+    background: white;
+    position: relative;
+    overflow: hidden;
+    padding:0rpx 30rpx;
+    /* padding-bottom: 13rpx; */
+    border-bottom: 1rpx solid #c1c1c1;
+    font-family: "微软雅黑";
+    /* height: 100rpx */
+    min-height: 3rem;
+}
+.mui-cell:after,
+.mui-cell:before{
+  content:" ";
+  display: table;
+}
+.mui-cell:after{
+  clear:both;
+}
+.p-red{
+  font-size: 1.1rem !important;
+  color: red !important;
+}
+
+.p-gray{
+  font-size: 1.0rem !important;
+  color: #828586 !important;
+}
+
+.p-title{
+    font-size: 1rem !important;
+    color: #404141 !important;
+    font-weight: bold;
+    /* line-height: 20rpx; */
+}
+
+.p-spec{
+  text-indent: 2rem;
+  font-size: 1rem !important;
+  color: #828586 !important;
+  float:right;
+  height: 2.8rem;
+  line-height: 2.8rem;
+}
+
+
+
+.p-value{
+    font-size: 1rem !important;
+    color: #0099ff !important;
+    font-weight: normal;
+}
+
+.p-black-normal{
+  font-size: 0.9rem !important;
+  color: #404141 !important;
+  position: inherit;
+}
+
+.mui-box{
+  position: relative;
+  margin-top: 20rpx;
+  padding: 10rpx 30rpx;
+}
+
+.v-mui-box{
+}
+
+.btn-dopush{
+  border: 1rpx solid #e4e4e4;
+  border-radius: 10rpx;
+  padding:5rpx 25rpx;
+  font-size: 1rem !important;
+  background-color: #4e9fe3;
+  margin:8rpx 40rpx;
+  color:#fff;
+}
+
+.p-left{
+  display: inline-block;
+  line-height: 16.5px;
+}
+
+.pull-right{
+  float: right;
+  display: inline-block;
+  margin-top: -20rpx;
+}
+
+.btn-doCall{
+  font-size: 0.7rem !important;
+  color: #fff;
+  background-color: #4e9fe3;
+  margin-left: 20rpx;
+  margin-top: 16rpx;
+  float: right;
+}
+
+.flter-itm{
+
+}
+.spc{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+picker{
+  position: absolute;
+  width: 400rpx;
+  top: 50%;
+  right: 20rpx;
+  transform: translate(0,-50%);
+  display: flex;
+  justify-content: flex-end;
+}
+
+picker .flter-itm{
+  /* position: absolute;
+  top: 50%;
+  transform: translate(0,-50%); */
+}
+picker .flter-itm image{
+  height: 25rpx;
+  width: 32rpx;
+}

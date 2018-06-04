@@ -1,0 +1,53 @@
+<!--可编辑机械详情  -->
+<view class='kbjjxxq'>
+      <!--信息  -->
+      <view class='particulars'>
+           <!--标题  -->
+          <view class='one'>
+              <view class='title'>{{machinerieInfo.title}}</view>
+              <!--班组  -->
+              <!-- <view class='bz'>瓦工班</view> -->
+          </view>
+              <!-- 价格 -->
+              <view class='money'>价格:<text class='gz'>{{machinerieInfo.price}}</text>
+              </view>
+              <!--机械种类  -->
+              <view class='pepople_number'>机械种类:<text class='zgrs'>{{machinerieInfo.type.text}}</text>
+              </view>
+              <!--发布时间  -->
+              <view class='time'>
+               发布时间:<text class='fbsj'>{{machinerieInfo.createDate}}</text>
+              </view>
+      </view>
+          <!--地址联系方式  -->
+        <view class='ContactWay'>
+              <!--地址  -->
+              <view class='address'>
+                  <image src='../../image/address.png'></image>
+                  <text class='text-address'>11111111111111</text>
+                </view>
+                <!--下划线  -->
+                <view class='line'></view>
+                <!--联系人  -->
+                <view class='linkman'>
+            联系人：<text class='nm'>11111</text>
+                 </view>
+                 <!--联系方式  -->
+                 <view class='phone'>
+            联系方式:<text class='lxfs'>11111</text>
+        </view>
+        <!--机械备注  -->
+           <view class='remark'>
+            机械备注:<view class='zgbz'>文字描述文字描述文字描述文字描述</view> 
+        </view>
+        <!--机械状态  -->
+           <view class='jxzt'>
+            机械状态:
+            <text class='zt'>求租中</text> 
+            <image src='../../image/xl.jpg'></image>
+        </view>
+        </view>
+        <!--提交按钮  -->
+         <button class='btn'>提交</button>
+</view>
+ 

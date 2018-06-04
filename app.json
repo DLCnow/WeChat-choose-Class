@@ -1,46 +1,63 @@
 {
   "pages": [
     "pages/index/index",
-        "pages/stuSignin/stuSignin",
-   
-    "pages/updatePass/updatePass",
-    "pages/teaEvalution/teaEvalution",
-    "pages/teaCourseList/teaCourseList",
-    "pages/teaSignin/teaSignin",
-
-    "pages/teaCourse/teaCourse",
-    "pages/personal/personal",
-    "pages/login/login",
-    "pages/chooseClass/chooseClass",
-    "pages/stuCourse/stuCourse",
-    "pages/stuEvalution/stuEvalution",
-    "pages/teaUpdateC/teaUpdateC",
-    "pages/updateEvalution/updateEvalution",
-    "pages/register/register"
+    "pages/wd/wd",
+    "pages/publish/publish",
+    "pages/bzlb/bzlb",
+    "pages/jxlb/jxlb",
+    "pages/jbfk/jbfk",
+    "pages/zgxx/zgxx",
+    "pages/republish/republish",
+    "pages/fb/fb",
+    "pages/hireDetail/hireDetail",
+    "pages/wdjx/wdjx",
+    "pages/smrz/smrz",
+    "pages/kbjzgxq/kbjzgxq",
+    "pages/kbjjxxq/kbjjxxq",
+    "pages/wdzg/wdzg",
+    "pages/jxxq/jxxq",
+    "pages/dl/dl",
+    "pages/jxtdxq/jxtdxq",
+    "pages/bztdxq/bztdxq",
+    "pages/tcjx/tcjx",
+    "pages/tcbz/tcbz",
+    "pages/logs/logs",
+    "pages/auth/auth"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "选课小程序",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#4da1ff",
+    "navigationBarTitleText": "建筑港",
+    "navigationBarTextStyle": "write",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 800000,
+    "downloadFile": 800000
   },
   "tabBar": {
-    "color": "#9dacb7",
-    "selectedColor": "#34B457",
+    "color": "#000",
+    "selectedColor": "#000",
+    "borderStyle": "white",
     "backgroundColor": "#fff",
-    "borderStyle": "rgba(0, 0, 0, 0.1)",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/大炮.png",
-        "selectedIconPath": "images/大炮.png"
+        "iconPath": "image/bottom/sy.png",
+        "selectedIconPath": "image/bottom/sy2.png",
+        "text": "主页"
       },
       {
-        "pagePath": "pages/personal/personal",
-        "text": "个人中心",
-        "iconPath": "images/大炮.png",
-        "selectedIconPath": "images/大炮.png"
+        "pagePath": "pages/publish/publish",
+        "iconPath": "image/bottom/fb.png",
+        "selectedIconPath": "image/bottom/fb2.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/wd/wd",
+        "iconPath": "image/bottom/wd.png",
+        "selectedIconPath": "image/bottom/wd2.png",
+        "text": "我的"
       }
     ]
   }

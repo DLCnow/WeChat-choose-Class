@@ -1,0 +1,119 @@
+
+/*登录  */
+/*建筑港logo  */
+.img image{
+  float: left;
+  width: 300rpx;
+  height: 150rpx;
+  margin-left: 230rpx;
+  margin-top: 60rpx;
+}
+/*文字描述  */
+.text{
+  color: #0092dd;
+  float: left;
+  font-size: 38rpx;
+  margin-left: 200rpx;
+  margin-top: 30rpx;
+  font-weight: bolder;
+}
+/*矩形  */
+.big_rec{
+  width: 600rpx;
+  height: 720rpx;
+  border: 1px solid #ededed;
+  float: left;
+  border-radius: 20rpx;
+  margin-left: 75rpx;
+  margin-top: 60rpx;
+  box-shadow: 0px 0px 10px 3px #ededed;
+}
+/*登录信息  */
+.welcome{
+  float: left;
+  font-size: 55rpx;
+  margin-left: 150rpx;
+  margin-top: 30rpx;
+}
+.wc{
+  float: left;
+  font-size: 35rpx;
+  margin-left: 170rpx;
+}
+/*请输入  */
+.sr{
+  float: left;
+  font-weight: 500rpx;
+  height: 80rpx;
+  border: 1px solid #808080;
+  border-radius: 50rpx;
+  margin-left: 80rpx;
+  margin-top: 30rpx;
+  width: 435rpx;
+}
+.p_sr{
+  text-align: center;
+  padding-top: 10rpx;
+}
+/*密码  */
+.password{
+  float: left;
+  height: 80rpx;
+  border: 1px solid #808080;
+  border-radius: 50rpx;
+  margin-left: 80rpx;
+  margin-top: 20rpx;
+  width: 435rpx;
+}
+.pass{
+  font-size: 60rpx;
+  text-align: center;
+  color: black;
+}
+/*登录按钮  */
+.dl_btn .btn{
+  float: left;
+  height: 80rpx;
+  border-radius:50rpx;
+  width: 435rpx;
+  margin-left: 80rpx;
+  margin-top: 120rpx;
+  background-color: #4da2ff;
+  color: white;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+.dl_btn{
+  text-align: center;
+  font-size: 30rpx;
+}
+/*注册找回密码  */
+.zc{
+  float: left;
+  font-size: 30rpx;
+  margin-left: 170rpx;
+  margin-top: 30rpx;
+}
+.zc text{
+  color: #4ca1f1;
+  margin-right: 100rpx;
+}
+/*点击使用微信登录  */
+.weix{
+  float: left;
+  margin-top: 10rpx;
+}
+.weix .wx_dl{
+  font-size: 22rpx;
+  color: #4ca1f1;
+  margin-left: 30rpx;
+}
+.weix .image_wx{
+  float: left;
+}
+.weix image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 180rpx;
+  padding-top: 10rpx;
+}

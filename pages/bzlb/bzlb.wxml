@@ -1,0 +1,217 @@
+  
+<view class="swiper-tab">
+
+  <view id='list1' class="swiper-tab-list {{currentTab==0  ? 'on' : ''}}" data-current="0" bindtap="swichNav">班组列表</view>
+  <!-- <view class='line_center'></view> -->
+  <view id='list2' class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我要入驻</view>
+
+
+
+
+</view>
+<swiper style="height:{{height}}rpx" current="{{currentTab}}" class="swiper-box" duration="100"   circular="true" bindchange="bindChange">
+  <swiper-item>
+
+
+  <view class='area'>
+      <view class='dq'>
+       <picker mode="multiSelector" bindchange="bindMultiPickerAreaChange" bindcolumnchange="bindMultiPickerColumnAreaChange" value="{{areaIndex}}" range="{{areaNamesArray}}">
+        <view class="flter-itm">
+        {{areName}}
+
+         <view class='flter-image'> <image src='../../image/xl.jpg'></image>  </view>
+        </view>
+     </picker> 
+       <!-- <view class='image'> <image src='../../image/xl.jpg'></image>  </view> -->
+      </view>
+      <view class='center'>|</view>
+
+
+
+
+
+
+
+
+
+      <!-- 全部工种 -->
+       <view class='gz'>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange2" bindcolumnchange="bindMultiPickerColumnChange" value="{{typeIndex}}" range="{{typeArray}}">
+        <view class="flter-itm">
+          {{typeName}}
+           <view class='flter-image'> <image src='../../image/xl.jpg'></image>  </view>
+        </view>
+     </picker>
+     <!-- <view class='image'>
+      <image src='../../image/xl.jpg'></image>
+      </view> -->
+      </view> 
+  </view>
+    <view class='table_zg2' wx:for="{{teams}}" wx:key="*this" wx:for-item="item" data-name="{{item.id}}" bindtap="goTeamDetail">
+      <dl>
+        <view class='table'>
+           <!-- 展示头像图片 -->
+          <view wx:if="{{item.photo.url != null}}">
+            <image class='img' src="{{item.photo.url}}"></image>
+          </view>
+          <view wx:else>
+            <image class='img' src="../../image/logo.png"></image>
+          </view>
+
+
+
+
+
+
+
+
+          <view class='table_details'>
+             <view class='title' wx:if="{{item.title != null}}">{{item.title}}</view>
+            <view class='title' wx:elif="{{item.teamType.title != null}}">{{item.teamType.title}}</view>
+            <view class='title' wx:else>{{item.project.name}}</view>
+
+
+
+
+
+            <view class="view-contract" wx:if="{{item.title !=null}}">
+            
+              <view class="contact-label">联系人：</view>
+              <view class="contact">{{item.title}}</view>
+            </view> 
+            <view  class="contact" wx:elif="{{item.teamType.title != null}}">{{item.teamType.title}}</view>
+            <view wx:else  class="view-contract">
+            
+              <view class="contact-label">联系人：</view>
+              <view class="contact">{{item.project.name}}</view>
+            </view>
+            <view class="view-contract">
+            
+             <view class="contact-label">入驻时间：</view>
+            <view  class="contact">{{item.createTime}}</view>
+            </view>
+            <view class="view-contract">
+              <view class="contact-label">班组状态:</view>
+              <view  class="contact"> {{item.status.text}}</view>
+            </view>
+          </view>
+          <view class='img'>
+            <image src='../../image/sy/fh.jpg'></image>
+          </view>
+          <!-- <view class='xq_text'>{{item.streetAddress}}</view>  -->
+        </view>
+      </dl>
+    </view>
+
+
+    
+  </swiper-item>
+
+
+
+
+
+
+
+
+  <swiper-item>
+    <!--班组入驻  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form bindsubmit="formSubmit" report-submit="true" bindreset="formReset">
+    <view class='bzrz' style="padding: 0rpx 10rpx;">
+      <!--联系人  -->
+      <view class="input-itm">
+          <view class="input-title">姓名</view>
+          <input class="input-box" placeholder-class='input-d' type='text' placeholder='姓名' bindinput="bindName"></input>
+      </view>
+      <view class="input-itm">
+          <view class="input-title">手机号</view>
+          <input class="input-box" placeholder-class='input-d' type='number' placeholder='手机号' bindinput="bindPhone"></input>
+      </view>
+
+      <view class="input-itm">
+        <view class="input-title" style="line-height:70rpx;">验证码</view>
+        <input class="input-box" type='number' placeholder-class='input-d'
+        placeholder='验证码' bindinput='bindCode' style="width:41%; display:inline-block;"></input>
+        <!-- <button class="btn" bindtap='getVerifyCode'>获取验证码</button> -->
+        <block wx:if="{{isInCode===1}}">
+           <button class="btn" bindtap='getVerifyCode'>获取验证码</button>
+        </block>
+        <block wx:else>
+          <button class="btn" style='opacity:0.6;'>{{isCodeTime}}s后再发送</button>
+        </block>
+      </view>
+  
+      <!--地区 -->
+      <view class="input-itm">
+          <view class="input-title">工种</view>
+          <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange2" value="{{multiIndex}}" range="{{multiArray}}">
+            <input class="input-box" placeholder='请选择招工类型' placeholder-class='input-d' disabled="disabled" value="{{workerType}}">
+            </input>
+          </picker>
+      </view>
+
+
+      <view class="input-itm">
+          <view class="input-title">设置密码</view>
+          <input class="input-box" placeholder-class='input-d' password type='password' type='text' placeholder='设置密码' bindinput="bindPsw"></input>
+      </view>
+
+      <view class="input-itm">
+          <view class="input-title">确认密码</view>
+          <input class="input-box" placeholder-class='input-d' password type='password' type='text' placeholder='确认密码' bindinput="bindConfirmPsw"></input>
+      </view>
+
+ <view class="input-itm">
+      <view class="input-title" style="height: 50rpx !important;">地区</view>
+ <picker style="display:inline-block;" mode="multiSelector" bindchange="bindMultiPickerAreaChange3" bindcolumnchange="bindMultiPickerColumnAreaChange3" value="{{jxIndex}}" range="{{jxNamesArray}}">
+        <view class="flter-itm special" style="">
+        {{jxName}}
+        <view class='flter-image'> <image src='../../image/xl.jpg'></image>  </view>
+        </view>
+     </picker> 
+      </view>
+
+
+ <view class="input-itm">
+          <view class="input-title">详细地址</view>
+          <input class="input-box" placeholder-class='input-d' type='text' type='text' placeholder='详细地址' bindinput="bindAllAddress"></input>
+      </view>
+
+
+  <view class="input-itm notes passwork" style="color:red;margin-top: 10rpx;" wx:if="{{!isSubmitAble}}">
+    {{warnStr}}
+  </view>
+
+  <view class='input-itm'>
+    <view class='m-save' style="margin-top:20rpx;">
+      <!-- <button type='submit' style="opacity: {{opacity}};" disabled='{{!isSubmitAble}}' bindtap='doSave'   >入驻</button> -->
+ <button style="opacity: {{opacity}};" disabled='{{!isSubmitAble}}'   formType="submit" >入驻</button>
+      
+    </view>
+  </view>
+
+  </view>
+
+
+  </form>
+  </swiper-item>
+</swiper>
+
+<loading hidden="{{hiddenLoading}}" bindchange="loadingChange">
+  加载中...
+</loading>
+
+

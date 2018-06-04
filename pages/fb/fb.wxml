@@ -1,0 +1,66 @@
+<!--发布  -->
+<view class='fb'>
+<!--标题  -->
+    <view class='title'>
+        <view class="v-title w-2"><span class='hs'></span>标题</view>
+        <input class="v-value input-box w-5" placeholder='请输入招工标题' value='{{hireTitle}}'  bindinput="bindHireTitle"></input>
+    </view>
+<!--联系人  -->
+    <view class='name'>
+            <view class="v-title w-2"><span class='hs'></span>联系人</view>
+            <input class="v-value input-box w-5" placeholder='联系人' value="{{hireContacts}}"  bindinput="bindHireContacts"></input>
+        </view>
+ <!--手机号  -->
+      <view class='number'>
+          <view class='v-title w-2'><span class="sjh">手机号</span></view>
+          <input class='v-value w-5 input-box' placeholder='输入手机号' bindinput='bindHirePhone' value="{{hirePhone}}"></input>
+      </view>
+  <!--验证码  -->
+      <view class='code'>
+          <view class='v-title w-2'><span>验证码</span></view>
+          <view class="v-value">
+          <button class="btn-code" bindtap='getVerifyCode'>获取验证码</button>
+          <input class='w-2 input-box' placeholder='验证码' bindinput='bindHireCode' style="width:278rpx;float:right;"></input>
+          </view>
+      </view>
+  <!--地区  -->
+  <view class='area'>
+      <view class='v-title w-2'><span>地区</span></view>
+      <picker mode="region" value="{{region}}" custom-item="{{customItem}}" bindchange="bindRegionChange">
+          <input class="v-value w-5 input-box" placeholder='请选择地区' disabled="disabled" value="{{hireRegion}}">
+          </input>
+      </picker>
+  </view>
+  <!--工种  -->
+  <view class='work'>
+      <view class='v-title w-2'><span>工种</span></view>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <input placeholder='请选择招工类型' class="v-value w-5 input-box" disabled="disabled" value="{{workerType}}">
+        </input>
+        </picker>
+  </view>
+   <!--人数  -->
+  <view class='number'>
+      <view class='v-title w-2'><span>人数</span></view>
+      <input class='v-value w-5 input-box' type="number" value="{{hirePepoleNum}}" placeholder='输入需求人数'  bindinput='bindHirePepoleNum'>
+      </input>
+  </view>
+  <!--价格  -->
+  <view class='pice'>
+      <view class='v-title w-2'><span>价格</span></view>
+      <input class='v-value w-5 input-box' value="{{hireSalary}}" bindinput='bindHiresalary' placeholder='输入价格' >
+      </input>
+  </view>
+  <!--详情  -->
+   <view class='particulars'>
+      <view class='v-title w-2'>详情</view>
+<textarea class="v-value w-5 input-box" style="height:180rpx;" rows="3" value="{{hireRequest}}" bindinput="bindHireRequest" placeholder="请输入招工详情"/>
+  </view> 
+</view>
+<!--提醒-->
+<view class="input-itm notes" style="" wx:if="{{!isSubmitAble}}">
+    {{warnStr}}
+</view>
+<!--按钮-->
+<button class='btn-sub' style="margin-top:12rpx;" disabled='{{!isSubmitAble}}' bindtap='doSubmit'>发布</button>
+
