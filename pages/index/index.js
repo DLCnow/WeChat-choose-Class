@@ -1,272 +1,114 @@
-
+//index.js
+//获取应用实例
 const app = getApp()
 
 Page({
   data: {
-  // 轮播图
-    imgUrls: [{
-      link: '/pages/index/index',
-      url: 'https://jianzhugang.oss-cn-shenzhen.aliyuncs.com/wxMiniImages/banner1.png'
-    }
-    , {
-      link: '/pages/index/index',
-      url: 'https://jianzhugang.oss-cn-shenzhen.aliyuncs.com/wxMiniImages/banner2.png'
-      }, 
-      {
-        link: '/pages/index/index',
-        url: 'https://jianzhugang.oss-cn-shenzhen.aliyuncs.com/wxMiniImages/banner3.png'
-    }
-    /**, {
-      link: '/pages/index/index',
-      url: '../../image/sy/banner5.jpg'
-      }, {
-        link: '/pages/index/index',
-        url: '../../image/sy/banner6.jpg'
-    }, {
-      link: '/pages/index/index',
-      url: '../../image/sy/banner.png'
-    },**/
+    username: null,
+    password: null,
+    imgUrls: [
+      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
     indicatorDots: true,
     autoplay: true,
-    interval: 2000,
+    interval: 5000,
     duration: 1000,
-    hires: [],
-    machinerys: [],
-    userInfo: null,
-    hasUserInfo: false
+    avatarUrl: '',
+    nickName: '',
+    userType: '',
+    userid: 0
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
 
-    /// 清除缓存
-    wx.clearStorage()
 
 
-    // 清除本地缓存
-    try {
-      wx.clearStorageSync()
-    } catch (e) {
-      // Do something when catch error
-    }
-    this.getHires();
-    this.getMachinerys();
-    this.getNotes();
+    let that = this 
+      wx.getSetting({
+        success: function (res) {
+          if (res.authSetting['scope.userInfo']  ) {
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+            wx.getUserInfo({
+              success: function (res) {
+                app.globalData.userInfo = res.userInfo
+                that.data.avatarUrl = app.globalData.userInfo.avatarUrl
+                that.data.nickName = app.globalData.userInfo.nickName
+              }
+            })
+          } else if (wx.getStorageSync('username')){
+           
+            that.setData({
+              avatarUrl: wx.getStorageSync('avatarUrl'),
+              nickName: wx.getStorageSync('username'),
+              userType: wx.getStorageSync('userType'),
+              userid: wx.getStorageSync('userid')
+            })
 
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
+          }else{
+            wx.redirectTo({
+              url: '../login/login',
+            })
+          }
         }
       })
-    } 
-
-
-
-
-
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    wx.clearStorage()
-
-
-    // 清除本地缓存
-    try {
-      wx.clearStorageSync()
-    } catch (e) {
-      // Do something when catch error
-    }
-    this.getHires();
-    this.getMachinerys();
-    this.getNotes();
-
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    } 
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    wx.showNavigationBarLoading() //在标题栏中显示加载
-    this.getHires();
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
-  /**跳转 招工信息列表 */
-  goHireList: function(e){
+  // 学生模块
+  // 考勤签到
+  moveTSignin: function () {
+    let that = this
     wx.navigateTo({
-      url: '../zgxx/zgxx'
+      url: '../stuSignin/stuSignin?id=' + that.data.userid,
     })
   },
-
-  /**跳转 班组信息*/
-  goCityList: function (e) {
+  // 选择课程
+  moveTCourse: function () {
+    let that = this
     wx.navigateTo({
-      url: '../bzlb/bzlb'
+      url: '../stuCourse/stuCourse?id=' + that.data.userid,
     })
   },
-
-  /** 跳转 同城机械 */
-  goMachineryList: function (e) {
+  // 查看答辩评价
+  moveTEvalution: function(){
+    let that = this
     wx.navigateTo({
-      url: '../jxlb/jxlb'
+      url: '../stuEvalution/stuEvalution?id=' + that.data.userid,
     })
   },
-
-  /**跳转  举报骗子*/
-  goReportList:function(e){
+  // 学生模块
+  // ---------------
+  // 教师模块
+  // 发布课程
+  moveCourse: function(){
     wx.navigateTo({
-      url: '../jbfk/jbfk',
+      url: '../teaCourse/teaCourse',
     })
   },
-/**
- * 跳转 招工详情
- */
-  goHireDetail: function(e){
+  // 查看学生签到
+  moveSignin: function(){
     wx.navigateTo({
-      url: '../hireDetail/hireDetail?id=' + e.currentTarget.dataset.name
+      url: '../teaSignin/teaSignin',
     })
   },
-/**
- * 获取 招工列表
- */
-  getHires: function () {
-    var that = this;
-    app.func.req('projectHires/query', {
-      page: 0,
-      size: 5,
-      status: 'AUDITED'
-    }, function (data) {
-      wx.hideNavigationBarLoading() //完成停止加载
-      wx.stopPullDownRefresh() //停止下拉刷新
-      if (data) {
-        that.setData({
-          hires: (data.content),
-        });
-      }
-    });
-  },
-/**
- * 跳转 机械详情
- */
-  goMachineDetil: function (e) {
+  // 对学生答辩评价
+  movEvaluation: function(){
     wx.navigateTo({
-      url: '../jxxq/jxxq?id=' + e.currentTarget.dataset.name
+      url: '../teaEvalution/teaEvalution',
     })
   },
-  /**
-   * 获取 机械列表
-   */
-  getMachinerys: function(){
-    var that = this;
-    app.func.req('machineAsks/getAppList', {
-      page: 0,
-      size: 5
-    }, function (data) {
-      if (data) {
-        that.setData({
-          machinerys: that.data.machinerys.concat(data.content),
-        });
-      }
-    });
+  // 修改课程内容
+  moveUpdateC: function(){
+    wx.navigateTo({
+      url: '../teaUpdateC/teaUpdateC',
+    })
   },
-  /**
-   * 获取 公告信息
-   */
-  getNotes:function(){
-     //function 里面已经不是this所以使用this.setData不起作用
-    var that = this;
-    app.func.req('notes/getNotes', {
-      status: 1,
-      typeId: 1
-    }, function (data) {
-      if (data) {
-        that.setData({
-          notes: data
-        });
-      }
-    });
-  },
-  test: function(e){
+  // 查看课程列表
+  moveShowcourse: function(){
+    wx.navigateTo({
+      url: '../teaCourseList/teaCourseList',
+    })
   }
-})
+  // 教师模块
 
+})

@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="head-logo">
+
+  <block wx:if="{{avatarUrl==null}}">
+      <open-data  class="logo" type="userAvatarUrl"></open-data>  
+  </block>
+  <block wx:else>
+     <image class="avatarUrl" src="{{avatarUrl}}"></image>
+  </block>
+     <!-- <image   class="logo" src="../../images/logo.png"></image> -->
+  </view>
+  <view class="show-text">
+  <block  wx:if='{{nickName!==null}}' >
+      {{nickName}}
+  </block>
+   <block wx:else>
+        <open-data type="userNickName"></open-data> 
+   </block>
+   <block  wx:if='{{userType=="1"}}' >
+      同学
+   </block>
+   <block wx:else>
+      老师
+   </block>
+  </view>
+  <!-- <block>
+    <view class="function-box" bindtap="checkWorkBtnClick">个人信息</view>
+  </block> -->
+  <block>
+    <view class="function-box" bindtap="chooseClassBtnClick">修改密码</view>
+  </block>
+  <block wx:if="{{avatarUrl!==null}}">
+  <!-- 如果是用户名密码登陆的才显示 -->
+      <view class="function-box" bindtap="defenceBtnClick">退出登录</view>
+  </block>
+ 
+</view>

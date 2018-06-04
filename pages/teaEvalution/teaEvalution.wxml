@@ -1,0 +1,27 @@
+<!--pages/teaSignin/teaSignin.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">对学生答辩评价</view>
+    </view>
+     <view class="function-box" wx:for="{{course}}"  wx:key="*this" bindtap="updateTap" data-id="{{item.id}}">
+        
+           <view class="actor">
+          <image src="../../images/logo.png"></image>
+              <b>{{item.name}}</b>
+          </view>
+          <view > 答辩人:<b> {{item.stu_name}}</b>
+          </view>
+
+          <view >
+          评分: <b>{{item.score}}</b>
+          </view>
+  <view >
+          评论: <b>{{item.comment}}</b>
+          </view>
+
+
+
+
+     </view>
+
+</view>

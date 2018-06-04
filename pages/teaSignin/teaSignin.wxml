@@ -1,0 +1,31 @@
+<!--pages/teaSignin/teaSignin.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">学生签到情况</view>
+        <view class="page__desc">签到人数: {{count}}</view> 
+    </view>
+     <view class="function-box" wx:for="{{signin}}"  wx:key="*this">
+        <view class="fun-left">
+        <!-- <view>
+          任课老师: {{item.tea_name}}
+      </view> -->
+      <view>
+          
+      </view>
+          <view class="actor">
+          <image src="../../images/logo.png"></image>
+             签到学生:{{item.stu_name}}
+          </view>
+        </view>
+
+
+        <view class="fun-right">
+            <view style="color: #53b77b;"> {{item.time}}</view>
+        
+          <!-- <view style='color: #53b77b;'>{{item.date}} - {{item.time}}</view>
+<view>{{item.number}} 周</view> -->
+        </view>
+     
+     </view>
+
+</view>

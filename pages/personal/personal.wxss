@@ -3,14 +3,13 @@ page{
 }
 
 .container {
-  width: 100%;
-}
-.slide-image {
-  width:100%;
+  width: 700rpx;
+  min-height: 1000rpx;
   margin: 0 auto;
 }
-.slide-item {
-  width: 100%;
+.title {
+  font-size: 16px;
+
 }
 .function-box {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -22,6 +21,7 @@ page{
   padding: 1rem 1rem;
   background-color: #fff;
 }
+
 .head-logo{
  margin: 1rem auto;
   display: block;
@@ -29,6 +29,7 @@ page{
   width: 150rpx;
   border-radius: 50%;
   overflow: hidden;
+  box-shadow:0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 .logo{
  height: 100%;
