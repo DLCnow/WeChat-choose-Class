@@ -1,6 +1,5 @@
 <view class="container">
   <view class="head-logo">
-
   <block wx:if="{{avatarUrl==null}}">
       <open-data  class="logo" type="userAvatarUrl"></open-data>  
   </block>

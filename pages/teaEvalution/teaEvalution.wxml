@@ -2,6 +2,7 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
     <view class="page__hd">
         <view class="page__title">对学生答辩评价</view>
+        <view class="page_btn"  bindtap="addTap" >添加学生答辩评价</view>
     </view>
      <view class="function-box" wx:for="{{course}}"  wx:key="*this" bindtap="updateTap" data-id="{{item.id}}">
         

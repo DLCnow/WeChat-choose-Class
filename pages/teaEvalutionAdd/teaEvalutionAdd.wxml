@@ -1,0 +1,76 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">添加学生答辩评论</view>
+         <view class="page__desc">{{warnStr}}</view> 
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">答辩标题</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input bindinput="bindName" class="weui-input" value="{{name}}" placeholder="请输入答辩名称"/>
+                </view>
+            </view>
+
+
+
+
+        <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">答辩学生</view>
+                </view>
+                <view class="weui-cell__bd">
+
+                    <picker bindchange="bindCNumber" value="{{index}}" mode="selector" range="{{stu_name}}" >
+                        <view class="weui-input">{{stu_name[index]}}</view>
+                    </picker>
+                </view>
+            </view>
+
+ <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">答辩分数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input bindinput="bindScore" class="weui-input" value="{{score}}" placeholder="请输入答辩名称"/>
+                </view>
+            </view>
+
+
+ <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">答辩评价</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input bindinput="bindComment" class="weui-input" value="{{comment}}" placeholder="请输入答辩评价"/>
+                </view>
+            </view>
+
+<view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">答辩内容</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input bindinput="bindContent" class="weui-input" value="{{content}}" placeholder="请输入答辩内容"/>
+                </view>
+            </view>
+
+
+
+
+
+
+
+       </view>
+
+
+
+
+
+        <view class="weui-btn-area">
+            <button class="weui-btn"  disabled='{{!isSubmitAble}}'  type="primary" bindtap="showTopTips">确定</button>
+        </view>
+  </view>
+</view>

@@ -11,13 +11,26 @@ Page({
   },
   // 跳转 修改
   updateTap: function (e) {
-
     let flag = e.currentTarget.dataset.flag
     let id = e.currentTarget.dataset.id
     let numbers = e.currentTarget.dataset.number
-    console.log(numbers)
+    var randomTime = parseInt(Math.random()*10*0.4)
     let that = this
-    console.log(flag)
+    if(randomTime==0){
+      randomTime = randomTime +1
+    }
+
+
+    wx.showLoading({
+      title: '数据处理中..',
+    })
+
+ 
+  setTimeout(function(){
+    wx.hideLoading()
+
+
+   
     if (flag == '已选'){
       
       // 删除
@@ -248,6 +261,7 @@ Page({
 
      
     }
+  }, randomTime * 1000)
     // wx.navigateTo({
     //   url: '../teaUpdateC/teaUpdateC?id=' + e.currentTarget.dataset.id,
     // })

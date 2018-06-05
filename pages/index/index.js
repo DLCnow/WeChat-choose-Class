@@ -20,7 +20,9 @@ Page({
     userType: '',
     userid: 0
   },
-
+  onShow: function(){
+      this.onLoad()
+  },
   onLoad: function (options) {
 
 

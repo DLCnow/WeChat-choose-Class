@@ -28,6 +28,7 @@
    
    </view>
 
+
   <block wx:if='{{userType=="1"&&userType!==""}}'>
     <view class="function-box" bindtap="moveTSignin">考勤签到</view>
     <view class="function-box" bindtap="moveTCourse">选择课程</view>

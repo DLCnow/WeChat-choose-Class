@@ -14,7 +14,11 @@ Page({
       url: '../updateEvalution/updateEvalution?id=' + e.currentTarget.dataset.id,
     })
   },
-
+  addTap: function(){
+    wx.navigateTo({
+      url: '../teaEvalutionAdd/teaEvalutionAdd'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -46,7 +50,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad();
   },
 
   /**

@@ -13,8 +13,8 @@ Page({
 
     let that = this
     if (wx.getStorageSync('username')) {
-      let avatarUrl = wx.getStorageSync('avatarUrl') == 'head.png' ? '../../images/head.png' : wx.getStorageSync('avatarUrl')
       console.log(avatarUrl)
+      let avatarUrl = wx.getStorageSync('avatarUrl') == 'head' || wx.getStorageSync('avatarUrl') == 'head.png' ? '../../images/head.png' : '../../images/head.png' 
       that.setData({
         avatarUrl: avatarUrl,
         nickName: wx.getStorageSync('username'),
@@ -38,8 +38,6 @@ Page({
   defenceBtnClick: function(){
     wx.clearStorageSync();
     wx.clearStorage()
-
-
 
     wx.showLoading({
       title: '退出成功！',

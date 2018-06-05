@@ -46,3 +46,12 @@
   width: 1rem;
   margin-right: 20rpx;
 }
+
+.page_btn{
+  padding: 5px 10px;
+  background-color:#53b77b;
+  color: #fff;
+  width: 8rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
