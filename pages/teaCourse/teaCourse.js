@@ -140,7 +140,8 @@ Page({
       time: that.data.time,
       number: that.data.numbers,
       c_number: that.data.c_number,
-      knumber: that.data.knumber
+      knumber: that.data.knumber,
+      tea_id: wx.getStorageSync('userid')
     })
 
     wx.request({
@@ -153,7 +154,8 @@ Page({
         time: that.data.time,
         number: that.data.numbers,
         c_number: that.data.c_number,
-        k_number: that.data.knumber
+        k_number: that.data.knumber,
+        tea_id: wx.getStorageSync('userid')
       },
       method: 'get',
       header: { 'Content-Type': 'application/x-www-form-urlencoded' },

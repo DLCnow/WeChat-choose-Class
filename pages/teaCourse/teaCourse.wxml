@@ -89,6 +89,23 @@
                     </picker>
                 </view>
             </view>
+
+
+
+
+
+
+<!-- 
+              <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">选课最后期限</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCNumber" value="{{index}}" mode="selector" range="{{cnumber}}" >
+                        <view class="weui-input">{{cnumber[index]}}</view>
+                    </picker>
+                </view>
+            </view> -->
         </view>
 
         <view class="weui-btn-area">

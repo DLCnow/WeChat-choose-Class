@@ -1,7 +1,7 @@
 <!--pages/teaSignin/teaSignin.wxml-->
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
     <view class="page__hd">
-        <view class="page__title">教师发布课程</view>
+        <view class="page__title">查看教师发布过的课程</view>
     </view>
      <view class="function-box" wx:for="{{course}}"  wx:key="*this" bindtap="updateTap" data-id="{{item.id}}">
         <view class="fun-left">
@@ -9,9 +9,6 @@
         <view>
           任课老师: {{item.tea_name}}
       </view>
-
-
-    
           <view class="actor">
           <image src="../../images/logo.png"></image>
               {{item.name}}

@@ -1,0 +1,29 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">查看学生课程签到情况</view>
+            <view class="page__desc">当前课程: {{course}}</view>  
+            <view class="page__desc">当前日期: {{time}}</view>
+    </view>
+
+
+
+
+   <view class="function-box" wx:for="{{signin}}"  wx:key="*this">
+        <view class="fun-left">
+      <view>
+          
+      </view>
+          <view class="actor">
+          <image src="../../images/logo.png"></image>
+             签到学生:{{item.stu_name}}
+          </view>
+        </view>
+
+
+        <view class="fun-right">
+            <view style="color: #53b77b;"> {{item.time}}</view>
+        </view>
+     
+     </view> 
+
+</view>

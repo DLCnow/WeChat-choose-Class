@@ -1,63 +1,50 @@
-// pages/teaSignin/teaSignin.js
-var app = getApp();
+// pages/teaShowSign/teaShowSign.js
+
+
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    signin: [],
-    count: 0,
-    course: []
+    signin:[],
+    time: '',
+    course:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
-
-
+    var that = this
+    var course = options.course
+    var id = options.id
+    var date = new Date()
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+    var D = date.getDate() + ' ';
+    var time = Y + M + D
     wx.request({
-      url: app.globalData.rootDocment + '/users/getAllCourseTea?tea_id=' + wx.getStorageSync('userid'),
-      data: {},
-      method: 'get',
-      header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      success: function (res) {
-        that.setData({
-          course: res.data
-        })
-      }
-    })
-
-
-
-
-
-
-    wx.request({
-      url: app.globalData.rootDocment + '/users/getSignin',
-      data:{},
+      url: app.globalData.rootDocment + '/users/getSignByTime',
+      data: {
+        course: id,
+        time: time
+      },
       method: 'get',
       header: { 'Content-Type': 'application/x-www-form-urlencoded' },
       success: function (res) {
 
-        that.setData({
-          signin: res.data,
-          count: res.data.length
-        })
+      console.log(res.data)
+      that.setData({
+        signin: res.data,
+        time: time,
+        course: course
+      })
       }
     })
   },
-  // 跳转查看当天当前课程所有的签到学生的信息
-  updateTap: function(e){
-    console.log(e)
-    var id = e.currentTarget.dataset.id
-    var course = e.currentTarget.dataset.course
-    wx.navigateTo({
-      url: '../teaShowSign/teaShowSign?id=' + id + '&course=' + course,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

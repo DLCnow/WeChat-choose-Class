@@ -1,24 +1,22 @@
 {
   "pages": [
       "pages/index/index",
-        "pages/teaEvalutionAdd/teaEvalutionAdd",
- 
- 
-   
+    "pages/teaSignin/teaSignin",
+    "pages/teaEvalutionAdd/teaEvalutionAdd",
     "pages/teaCourse/teaCourse",
     "pages/teaUpdateC/teaUpdateC",
     "pages/stuSignin/stuSignin",
     "pages/updatePass/updatePass",
     "pages/teaEvalution/teaEvalution",
     "pages/teaCourseList/teaCourseList",
-    "pages/teaSignin/teaSignin",
     "pages/personal/personal",
     "pages/login/login",
     "pages/chooseClass/chooseClass",
     "pages/stuCourse/stuCourse",
     "pages/stuEvalution/stuEvalution",
     "pages/updateEvalution/updateEvalution",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/teaShowSign/teaShowSign"
   ],
   "window": {
     "backgroundTextStyle": "light",

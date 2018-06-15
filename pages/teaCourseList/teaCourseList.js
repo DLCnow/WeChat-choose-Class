@@ -21,8 +21,10 @@ Page({
   onLoad: function (options) {
     let that = this
 
+
+    console.log(wx.getStorageSync('userid'))
     wx.request({
-      url: app.globalData.rootDocment + '/users/getAllCourse',
+      url: app.globalData.rootDocment + '/users/getAllCourseTea?tea_id=' + wx.getStorageSync('userid'),
       data: {},
       method: 'get',
       header: { 'Content-Type': 'application/x-www-form-urlencoded' },
